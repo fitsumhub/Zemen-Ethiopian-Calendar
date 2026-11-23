@@ -2,67 +2,3724 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Zemen: Ethiopian Calendar — Privacy Policy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Zemen: Ethiopian Calendar (ዘመን) · Official Website &amp; Privacy Policy</title>
+  <meta name="description" content="Official website and privacy policy for Zemen: Ethiopian Calendar (ዘመን). Dual Ethiopian &amp; Gregorian calendar, Bahire Hasab computus, 30 daily saints, luxury widgets, and greeting cards." />
+  <meta name="keywords" content="Ethiopian Calendar, Zemen, Bahire Hasab, Ge'ez numerals, Ethiopian holidays, Ethiopian date converter, Orthodox Tewahedo fasting, Android widget, Samsung One UI widget, com.zemen.calendar" />
+  <meta name="theme-color" content="#080A0F" />
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Zemen: Ethiopian Calendar · ዘመን" />
+  <meta property="og:description" content="Your Time. Your Tradition. Your Calendar. Authentic Ethiopian &amp; Gregorian dual calendar with Bahire Hasab, luxury widgets &amp; 100% offline precision." />
+  <meta property="og:image" content="assets/zemen_logo.jpg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Noto+Sans+Ethiopic:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
   <style>
-    :root { color-scheme: light dark; }
+    /* ─── CSS Variables & Executive Design System ─────────────── */
+    :root {
+      --bg-base: #07090E;
+      --bg-surface: #0D121D;
+      --bg-card: rgba(16, 23, 38, 0.78);
+      --bg-card-hover: rgba(24, 34, 54, 0.92);
+      --bg-glass: rgba(13, 18, 30, 0.72);
+
+      --border-subtle: rgba(212, 175, 116, 0.2);
+      --border-glow: rgba(212, 175, 116, 0.55);
+      --border-emerald: rgba(16, 185, 129, 0.35);
+
+      --gold: #D4AF74;
+      --gold-light: #F6E6B8;
+      --gold-dark: #9A7B38;
+      --gold-glow: rgba(212, 175, 116, 0.28);
+
+      --emerald: #10B981;
+      --emerald-dark: #065F46;
+      --emerald-light: #6EE7B7;
+      --emerald-glow: rgba(16, 185, 129, 0.3);
+
+      --eth-green: #10B981;
+      --eth-yellow: #F59E0B;
+      --eth-red: #EF4444;
+
+      --text-high: #F9FAFB;
+      --text-med: #D1D5DB;
+      --text-muted: #9CA3AF;
+      --text-dim: #6B7280;
+
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-xl: 32px;
+      --radius-pill: 9999px;
+
+      --font-display: 'Cinzel', serif;
+      --font-body: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-ethiopic: 'Noto Sans Ethiopic', 'Outfit', sans-serif;
+      --font-mono: 'Space Grotesk', monospace;
+
+      --shadow-3d: 0 30px 70px -15px rgba(0, 0, 0, 0.9), 0 0 50px -10px rgba(212, 175, 116, 0.2);
+      --shadow-glow: 0 0 35px rgba(16, 185, 129, 0.25);
+    }
+
+    /* ─── Reset & Base Styles ────────────────────────────────── */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg-base);
+      color: var(--text-high);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
     body {
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      line-height: 1.55;
-      max-width: 780px;
+      overflow-x: hidden;
+      position: relative;
+      background: radial-gradient(circle at 50% -10%, #15271E 0%, #080C14 45%, #05070B 100%);
+      min-height: 100vh;
+    }
+
+    /* Ambient Canvas for Floating Cultural Particles */
+    #ambient-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.6;
+    }
+
+    /* Cursor follow ambient glow */
+    .mouse-glow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(212, 175, 116, 0.08) 0%, rgba(16, 185, 129, 0.04) 40%, transparent 70%);
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 1;
+      border-radius: 50%;
+      transition: width 0.3s ease, height 0.3s ease;
+    }
+
+    /* ─── Header & Floating Navigation Bar ───────────────────── */
+    .nav-wrapper {
+      position: fixed;
+      top: 16px;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      padding: 0 20px;
+    }
+
+    .navbar {
+      width: 100%;
+      max-width: 1240px;
+      height: 68px;
+      background: rgba(13, 18, 30, 0.82);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-pill);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+      transition: all 0.3s ease;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .brand-logo-img {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      border: 1.5px solid var(--gold);
+      box-shadow: 0 0 16px rgba(212, 175, 116, 0.4);
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-brand:hover .brand-logo-img {
+      transform: scale(1.08) rotate(3deg);
+    }
+
+    .brand-text-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.18rem;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      line-height: 1.1;
+    }
+
+    .brand-subtitle {
+      font-family: var(--font-ethiopic);
+      font-size: 0.78rem;
+      color: var(--emerald-light);
+      letter-spacing: 0.04em;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      list-style: none;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--text-med);
+      font-weight: 500;
+      font-size: 0.92rem;
+      transition: color 0.2s ease;
+      position: relative;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--gold-light);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--gold);
+      transition: width 0.25s ease;
+    }
+
+    .nav-link:hover::after, .nav-link.active::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-cta-nav {
+      background: linear-gradient(135deg, var(--emerald) 0%, #047857 100%);
+      color: #FFFFFF;
+      padding: 9px 20px;
+      border-radius: var(--radius-pill);
+      font-weight: 600;
+      font-size: 0.88rem;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-cta-nav:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(16, 185, 129, 0.55);
+    }
+
+    /* Mobile Menu Toggle Button */
+    .mobile-menu-btn {
+      display: none;
+      background: transparent;
+      border: none;
+      color: var(--text-high);
+      cursor: pointer;
+      padding: 8px;
+      font-size: 1.4rem;
+    }
+
+    /* Mobile Navigation Drawer */
+    .mobile-nav-drawer {
+      display: none;
+      position: fixed;
+      top: 90px;
+      left: 20px;
+      right: 20px;
+      background: rgba(13, 18, 30, 0.96);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      z-index: 999;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85);
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .mobile-nav-drawer.open {
+      display: flex;
+    }
+
+    .mobile-nav-drawer a {
+      color: var(--text-high);
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 600;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    /* ─── Hero Section with 3D Device Showcase ───────────────── */
+    .hero-section {
+      position: relative;
+      z-index: 10;
+      padding: 155px 24px 80px;
+      max-width: 1260px;
       margin: 0 auto;
-      padding: 28px 18px 64px;
-      color: #1a1a1a;
-      background: #f7f7f8;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 52px;
+      min-height: 90vh;
     }
-    @media (prefers-color-scheme: dark) {
-      body { color: #eee; background: #121212; }
-      a { color: #9ecbff; }
+
+    /* Executive App Icon Badge Lockup */
+    .hero-brand-lockup {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      background: rgba(18, 25, 40, 0.7);
+      border: 1px solid var(--border-subtle);
+      padding: 10px 18px 10px 12px;
+      border-radius: var(--radius-xl);
+      backdrop-filter: blur(16px);
+      margin-bottom: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     }
-    h1 { font-size: 1.75rem; margin-bottom: 0.15rem; }
-    .tagline { opacity: 0.8; font-style: italic; margin-bottom: 0.75rem; }
-    .meta { opacity: 0.75; margin-bottom: 1.5rem; }
-    h2 { font-size: 1.15rem; margin-top: 1.75rem; }
-    ul { padding-left: 1.2rem; }
+
+    .hero-app-logo {
+      width: 58px;
+      height: 58px;
+      border-radius: 16px;
+      border: 1.5px solid var(--gold);
+      box-shadow: 0 0 20px rgba(212, 175, 116, 0.45);
+      object-fit: cover;
+    }
+
+    .hero-brand-info {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .hero-brand-name-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-brand-title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--gold-light);
+      letter-spacing: 0.05em;
+    }
+
+    .verified-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 17px;
+      height: 17px;
+      background: var(--emerald);
+      color: #fff;
+      border-radius: 50%;
+      font-size: 0.65rem;
+      font-weight: 800;
+    }
+
+    .hero-brand-meta-tags {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .meta-tag-pill {
+      color: var(--emerald-light);
+      font-weight: 600;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.12;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #FFFFFF 0%, #F5DEB3 50%, var(--gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-title-amharic {
+      display: block;
+      font-family: var(--font-ethiopic);
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--emerald);
+      -webkit-text-fill-color: var(--emerald);
+      margin-top: 8px;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-desc {
+      font-size: 1.12rem;
+      color: var(--text-med);
+      line-height: 1.68;
+      margin-bottom: 34px;
+      max-width: 600px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #D4AF74 0%, #B8860B 100%);
+      color: #0A0C10;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 28px;
+      border-radius: var(--radius-pill);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 10px 25px rgba(212, 175, 116, 0.4);
+      transition: all 0.25s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 14px 32px rgba(212, 175, 116, 0.55);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text-high);
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 14px 26px;
+      border-radius: var(--radius-pill);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--border-subtle);
+      transition: all 0.25s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(212, 175, 116, 0.12);
+      border-color: var(--gold);
+      color: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 24px;
+      max-width: 600px;
+    }
+
+    .stat-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--gold);
+      line-height: 1.1;
+    }
+
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 4px;
+    }
+
+    /* ─── 3D Interactive Phone Showcase ──────────────────────── */
+    .hero-3d-showcase {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      perspective: 1200px;
+    }
+
+    /* Realistic Flagship Phone Frame */
+    .phone-tilt-card {
+      width: 310px;
+      height: 640px;
+      background: #0A0D15;
+      border-radius: 48px;
+      border: 4px solid #2B3547;
+      box-shadow: var(--shadow-3d), 0 0 0 1px rgba(212, 175, 116, 0.35);
+      position: relative;
+      overflow: hidden;
+      transform-style: preserve-3d;
+      transition: transform 0.15s ease-out, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    /* Specular glass reflection sweep */
+    .phone-tilt-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -120%;
+      width: 200%;
+      height: 100%;
+      background: linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.1) 48%, rgba(212, 175, 116, 0.15) 52%, transparent 60%);
+      pointer-events: none;
+      z-index: 25;
+      transform: translateZ(30px);
+    }
+
+    /* Front camera punch-hole */
+    .phone-notch {
+      position: absolute;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90px;
+      height: 24px;
+      background: #000000;
+      border-radius: 20px;
+      z-index: 30;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .phone-notch::after {
+      content: '';
+      width: 10px;
+      height: 10px;
+      background: #0d1624;
+      border-radius: 50%;
+      border: 1px solid #1a2536;
+    }
+
+    .phone-screen {
+      width: 100%;
+      height: 100%;
+      border-radius: 42px;
+      overflow: hidden;
+      background: #0D121D;
+    }
+
+    .phone-screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    /* Phone Floating Interactive Badges */
+    .float-pill {
+      position: absolute;
+      background: rgba(14, 20, 32, 0.9);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-subtle);
+      padding: 10px 18px;
+      border-radius: var(--radius-pill);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text-high);
+      z-index: 20;
+      pointer-events: none;
+      animation: floatBadge 6s ease-in-out infinite;
+    }
+
+    .pill-1 { top: 12%; right: -32px; animation-delay: 0s; }
+    .pill-2 { bottom: 22%; left: -45px; animation-delay: 2s; }
+    .pill-3 { bottom: 6%; right: -25px; animation-delay: 4s; }
+
+    @keyframes floatBadge {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .pill-icon {
+      font-size: 1.15rem;
+    }
+
+    /* Screenshot Switcher Carousel Under Phone */
+    .phone-screen-switcher {
+      display: flex;
+      gap: 8px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 420px;
+    }
+
+    .screen-tab-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 7px 14px;
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .screen-tab-btn:hover {
+      background: rgba(212, 175, 116, 0.15);
+      color: var(--gold-light);
+      border-color: var(--border-glow);
+    }
+
+    .screen-tab-btn.active {
+      background: linear-gradient(135deg, rgba(212, 175, 116, 0.3) 0%, rgba(16, 185, 129, 0.3) 100%);
+      color: #FFFFFF;
+      border-color: var(--gold);
+      box-shadow: 0 0 14px rgba(212, 175, 116, 0.35);
+    }
+
+    /* ─── Section Shared Layout ──────────────────────────────── */
+    .section-wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 100px 24px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 740px;
+      margin: 0 auto 56px;
+    }
+
+    .section-kicker {
+      font-family: var(--font-ethiopic);
+      color: var(--gold);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .section-heading {
+      font-family: var(--font-display);
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .section-subtext {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    /* ─── Interactive Feature Spotlight Showcase ─────────────── */
+    .showcase-stage-box {
+      background: var(--bg-card);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 48px;
+      box-shadow: var(--shadow-3d);
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 52px;
+      align-items: center;
+    }
+
+    .showcase-device-col {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      perspective: 1000px;
+    }
+
+    .showcase-phone-frame {
+      width: 300px;
+      height: 620px;
+      background: #0A0D15;
+      border-radius: 44px;
+      border: 3.5px solid #2F394C;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(16, 185, 129, 0.2);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .showcase-phone-frame:hover {
+      transform: scale(1.02);
+    }
+
+    .showcase-phone-screen {
+      width: 100%;
+      height: 100%;
+      border-radius: 38px;
+      overflow: hidden;
+    }
+
+    .showcase-phone-screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.3s ease;
+    }
+
+    .showcase-details-col {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .showcase-category-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--emerald-light);
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      padding: 5px 14px;
+      border-radius: var(--radius-pill);
+      align-self: flex-start;
+      font-family: var(--font-mono);
+    }
+
+    .showcase-feature-title {
+      font-family: var(--font-display);
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.2;
+    }
+
+    .showcase-feature-title-am {
+      display: block;
+      font-family: var(--font-ethiopic);
+      font-size: 1.25rem;
+      color: var(--gold);
+      margin-top: 6px;
+      font-weight: 700;
+    }
+
+    .showcase-feature-desc {
+      color: var(--text-med);
+      font-size: 1.02rem;
+      line-height: 1.7;
+    }
+
+    .showcase-highlights-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      list-style: none;
+    }
+
+    .showcase-highlight-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      font-size: 0.88rem;
+      color: var(--text-high);
+      font-weight: 600;
+    }
+
+    .highlight-icon {
+      color: var(--gold);
+      font-size: 1rem;
+    }
+
+    .showcase-nav-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .showcase-nav-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-pill);
+      padding: 8px 16px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .showcase-nav-btn:hover {
+      background: rgba(212, 175, 116, 0.12);
+      color: var(--gold-light);
+      border-color: var(--border-glow);
+    }
+
+    .showcase-nav-btn.active {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+      color: #0A0C10;
+      border-color: var(--gold);
+      font-weight: 700;
+      box-shadow: 0 4px 16px rgba(212, 175, 116, 0.4);
+    }
+
+    /* ─── High-Res Gallery Grid with Realistic Bezels ────────── */
+    .gallery-filter-bar {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+    }
+
+    .gallery-filter-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: var(--text-med);
+      padding: 9px 20px;
+      border-radius: var(--radius-pill);
+      font-weight: 600;
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .gallery-filter-btn:hover, .gallery-filter-btn.active {
+      background: var(--gold);
+      color: #0A0C10;
+      border-color: var(--gold);
+      font-weight: 700;
+      box-shadow: 0 4px 14px rgba(212, 175, 116, 0.35);
+    }
+
+    .screenshots-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    /* Phone Chassis Gallery Card */
+    .gallery-phone-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 16px;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .gallery-phone-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      border-color: var(--gold);
+      box-shadow: 0 26px 60px rgba(0, 0, 0, 0.85), 0 0 35px rgba(212, 175, 116, 0.25);
+    }
+
+    .gallery-phone-body {
+      background: #000;
+      border-radius: 34px;
+      border: 3px solid #2B3547;
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 9 / 19.5;
+      width: 100%;
+    }
+
+    .gallery-phone-notch {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70px;
+      height: 18px;
+      background: #000;
+      border-radius: 12px;
+      z-index: 10;
+    }
+
+    .gallery-phone-body img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-phone-card:hover .gallery-phone-body img {
+      transform: scale(1.04);
+    }
+
+    .gallery-card-footer {
+      padding: 16px 8px 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .gallery-card-name {
+      font-weight: 700;
+      font-size: 0.98rem;
+      color: #FFFFFF;
+      font-family: var(--font-body);
+    }
+
+    .gallery-card-tag {
+      font-size: 0.74rem;
+      background: rgba(212, 175, 116, 0.15);
+      border: 1px solid rgba(212, 175, 116, 0.35);
+      color: var(--gold-light);
+      padding: 3px 10px;
+      border-radius: var(--radius-pill);
+      font-weight: 600;
+    }
+
+    /* ─── Interactive 3D Android Widget Atelier ───────────────── */
+    .widget-atelier-box {
+      background: var(--bg-card);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 52px;
+      box-shadow: var(--shadow-3d);
+    }
+
+    .widget-preview-stage {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      perspective: 1000px;
+    }
+
+    .android-widget-card {
+      width: 330px;
+      background: linear-gradient(135deg, #1E2533 0%, #0A0C10 50%, #17120C 100%);
+      border: 1.2px solid #3A3224;
+      border-radius: 26px;
+      padding: 22px 24px;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.75), 0 0 35px rgba(212, 175, 116, 0.18);
+      transition: all 0.35s ease;
+      position: relative;
+      transform-style: preserve-3d;
+    }
+
+    .widget-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .widget-brand-mark {
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: #D4AF74;
+      letter-spacing: 0.08em;
+    }
+
+    .widget-badge-group {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .widget-chip {
+      background: rgba(212, 175, 116, 0.15);
+      border: 1px solid rgba(212, 175, 116, 0.4);
+      color: #F0DFB8;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-ethiopic);
+    }
+
+    .widget-sync-icon {
+      color: #D4AF74;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .widget-sync-icon:hover {
+      transform: rotate(180deg);
+    }
+
+    .widget-body-row {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 16px;
+    }
+
+    .widget-day-big {
+      font-family: var(--font-display);
+      font-size: 4.2rem;
+      font-weight: 900;
+      color: #D4AF74;
+      line-height: 0.9;
+    }
+
+    .widget-divider-v {
+      width: 1.5px;
+      height: 58px;
+      background: rgba(212, 175, 116, 0.3);
+    }
+
+    .widget-date-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .widget-month-title {
+      font-family: var(--font-ethiopic);
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #FAF6EF;
+      line-height: 1.1;
+    }
+
+    .widget-year-title {
+      font-family: var(--font-ethiopic);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #C8A96B;
+    }
+
+    .widget-weekday-title {
+      font-size: 0.78rem;
+      color: #9AA3B2;
+    }
+
+    .widget-divider-h {
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, #C8A96B 50%, transparent 100%);
+      margin-bottom: 14px;
+    }
+
+    .widget-footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .widget-greg-text {
+      font-size: 0.76rem;
+      color: #9AA3B2;
+      font-weight: 600;
+    }
+
+    .widget-saint-pill {
+      background: #241E15;
+      border: 1px solid rgba(212, 175, 116, 0.45);
+      color: #F0DFB8;
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-ethiopic);
+    }
+
+    /* Widget Stepper Controls */
+    .widget-stepper-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .stepper-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #FFFFFF;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 1rem;
+    }
+
+    .stepper-btn:hover {
+      background: var(--gold);
+      color: #000;
+      border-color: var(--gold);
+    }
+
+    /* Widget Theme Picker Controls */
+    .widget-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .theme-selector-label {
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .theme-btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .theme-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 12px 18px;
+      color: var(--text-high);
+      font-size: 0.92rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: all 0.2s ease;
+      text-align: left;
+    }
+
+    .theme-btn:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--border-glow);
+      transform: translateX(4px);
+    }
+
+    .theme-btn.active {
+      background: rgba(212, 175, 116, 0.15);
+      border-color: var(--gold);
+      color: var(--gold-light);
+      box-shadow: 0 4px 18px rgba(212, 175, 116, 0.25);
+    }
+
+    .theme-color-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .widget-spec-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: var(--radius-md);
+      font-size: 0.84rem;
+      color: #6EE7B7;
+      font-weight: 600;
+    }
+
+    /* ─── Interactive Live Converter Atelier ─────────────────── */
+    .converter-atelier-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 44px;
+      box-shadow: var(--shadow-3d);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .converter-pane {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .converter-pane-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .converter-inputs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .converter-field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .converter-field-group label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .converter-select, .converter-input {
+      background: #0B0F18;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-md);
+      color: #FFFFFF;
+      padding: 10px 14px;
+      font-size: 0.95rem;
+      font-family: var(--font-body);
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .converter-select:focus, .converter-input:focus {
+      border-color: var(--gold);
+    }
+
+    .converter-result-box {
+      background: rgba(14, 20, 32, 0.85);
+      border: 1px solid var(--border-emerald);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .converter-result-main {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--emerald-light);
+      line-height: 1.2;
+    }
+
+    .converter-result-geez {
+      font-family: var(--font-ethiopic);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .converter-result-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ─── Bahire Hasab Computus Explorer ─────────────────────── */
+    .computus-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      box-shadow: var(--shadow-3d);
+    }
+
+    .computus-control-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .computus-year-picker {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .computus-year-input {
+      background: #0A0E18;
+      border: 1px solid var(--border-glow);
+      border-radius: var(--radius-pill);
+      padding: 8px 18px;
+      font-family: var(--font-mono);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      width: 140px;
+      text-align: center;
+      outline: none;
+    }
+
+    .computus-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .computus-item {
+      background: rgba(14, 20, 32, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .computus-item-label {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .computus-item-val {
+      font-family: var(--font-ethiopic);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+
+    .computus-item-desc {
+      font-size: 0.76rem;
+      color: var(--gold);
+    }
+
+    /* ─── 30 Commemorated Saints Explorer ─────────────────────── */
+    .saints-container {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      box-shadow: var(--shadow-3d);
+    }
+
+    .saints-search-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .saints-search-input {
+      flex: 1;
+      background: #0A0E18;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-pill);
+      padding: 12px 22px;
+      color: #FFFFFF;
+      font-size: 0.95rem;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .saints-search-input:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 12px rgba(212, 175, 116, 0.3);
+    }
+
+    .saints-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+      max-height: 480px;
+      overflow-y: auto;
+      padding-right: 8px;
+    }
+
+    .saints-grid::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .saints-grid::-webkit-scrollbar-thumb {
+      background: var(--border-subtle);
+      border-radius: 4px;
+    }
+
+    .saint-cell {
+      background: rgba(14, 20, 32, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .saint-cell:hover, .saint-cell.active {
+      border-color: var(--gold);
+      background: rgba(212, 175, 116, 0.12);
+      transform: translateY(-2px);
+    }
+
+    .saint-day-num {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(212, 175, 116, 0.15);
+      border: 1px solid var(--border-glow);
+      color: var(--gold-light);
+      font-family: var(--font-ethiopic);
+      font-weight: 800;
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .saint-name-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .saint-name-ethiopic {
+      font-family: var(--font-ethiopic);
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.2;
+    }
+
+    .saint-name-en {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    /* ─── Core Features Grid ─────────────────────────────────── */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 34px;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-glow);
+      background: var(--bg-card-hover);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+    }
+
+    .feature-card:hover::before {
+      opacity: 1;
+    }
+
+    .feature-icon-box {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      background: rgba(212, 175, 116, 0.14);
+      border: 1px solid rgba(212, 175, 116, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: var(--gold-light);
+    }
+
+    .feature-card-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+
+    .feature-card-desc {
+      color: var(--text-muted);
+      font-size: 0.94rem;
+      line-height: 1.6;
+    }
+
+    /* ─── Interactive Lightbox Modal ─────────────────────────── */
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(4, 6, 10, 0.94);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .lightbox-modal.open {
+      display: flex;
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 90vw;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 82vh;
+      border-radius: 24px;
+      border: 2px solid var(--border-glow);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.95);
+      object-fit: contain;
+    }
+
+    .lightbox-caption {
+      margin-top: 14px;
+      color: var(--gold-light);
+      font-weight: 600;
+      font-size: 1.05rem;
+      text-align: center;
+    }
+
+    .lightbox-close-btn {
+      position: absolute;
+      top: -45px;
+      right: 0;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      font-size: 1.2rem;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease;
+    }
+
+    .lightbox-close-btn:hover {
+      background: var(--eth-red);
+    }
+
+    /* ─── Complete Privacy Policy Document Section ───────────── */
+    .privacy-section {
+      background: linear-gradient(180deg, rgba(16, 23, 38, 0.94) 0%, rgba(9, 13, 20, 0.98) 100%);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 56px 48px;
+      margin-top: 40px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .privacy-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), var(--emerald), transparent);
+      opacity: 0.9;
+    }
+
+    .privacy-header {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 28px;
+      margin-bottom: 32px;
+    }
+
+    .privacy-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    .privacy-doc-title {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--gold-light);
+      margin-bottom: 14px;
+      letter-spacing: 0.02em;
+    }
+
+    .privacy-meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .privacy-meta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      color: var(--emerald);
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid var(--border-emerald);
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-mono);
+      font-weight: 600;
+    }
+
+    .privacy-meta-badge.neutral {
+      color: var(--text-med);
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    .privacy-lead {
+      color: var(--text-med);
+      font-size: 1.02rem;
+      line-height: 1.75;
+      max-width: 76ch;
+    }
+
+    .privacy-callout {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin: 28px 0 8px;
+    }
+
+    .privacy-pill {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+    }
+
+    .privacy-pill strong {
+      display: block;
+      color: var(--gold-light);
+      font-size: 0.84rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .privacy-pill span {
+      color: var(--text-med);
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
+    .privacy-toc {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 22px 24px;
+      margin-bottom: 40px;
+    }
+
+    .privacy-toc-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    .privacy-toc-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 10px;
+      list-style: none;
+      counter-reset: toc;
+    }
+
+    .privacy-toc-link {
+      color: var(--text-med);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.2s ease, transform 0.2s ease;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      counter-increment: toc;
+    }
+
+    .privacy-toc-link::before {
+      content: counter(toc, decimal-leading-zero);
+      color: var(--gold-dark);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      min-width: 1.6rem;
+    }
+
+    .privacy-toc-link:hover {
+      color: var(--gold-light);
+      transform: translateX(2px);
+    }
+
+    .policy-clause {
+      margin-bottom: 36px;
+      padding-top: 8px;
+      scroll-margin-top: 100px;
+    }
+
+    .policy-clause-title {
+      font-size: 1.28rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .policy-clause-title::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 12px rgba(212, 175, 116, 0.55);
+      flex-shrink: 0;
+    }
+
+    .policy-clause p {
+      color: var(--text-med);
+      font-size: 0.96rem;
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+
+    .policy-list {
+      padding-left: 22px;
+      color: var(--text-med);
+      font-size: 0.94rem;
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+
+    .policy-list li {
+      margin-bottom: 10px;
+    }
+
+    .policy-list li::marker {
+      color: var(--gold);
+    }
+
+    .policy-table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      margin: 18px 0 8px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .policy-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      min-width: 640px;
+    }
+
+    .policy-table th, .policy-table td {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 13px 16px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .policy-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .policy-table th {
+      background: rgba(212, 175, 116, 0.12);
+      color: var(--gold-light);
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .policy-table td {
+      color: var(--text-med);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .policy-table td strong {
+      color: var(--text-high);
+      font-weight: 600;
+    }
+
+    .policy-note {
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.22);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      color: var(--text-med);
+      font-size: 0.92rem;
+      line-height: 1.65;
+      margin: 14px 0;
+    }
+
+    .policy-contact-card {
+      display: grid;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      margin-top: 12px;
+    }
+
+    .policy-contact-card a {
+      color: var(--gold-light);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(212, 175, 116, 0.35);
+    }
+
+    .policy-contact-card a:hover {
+      color: #fff;
+    }
+
+    .policy-updated {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-dim);
+      font-size: 0.84rem;
+    }
+
+    /* ─── Site Footer ─────────────────────────────────────────── */
+    .site-footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 60px 24px 40px;
+      background: #040609;
+      position: relative;
+      z-index: 10;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
+    }
+
+    .footer-brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-logo-img {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      border: 1.2px solid var(--gold);
+    }
+
+    .footer-brand {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--gold);
+    }
+
+    .footer-tagline {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      list-style: none;
+      margin: 10px 0;
+    }
+
+    .footer-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.2s ease;
+    }
+
+    .footer-link:hover {
+      color: var(--gold-light);
+    }
+
+    .footer-copy {
+      font-size: 0.82rem;
+      color: var(--text-dim);
+    }
+
+    /* Floating Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: rgba(14, 20, 32, 0.9);
+      border: 1px solid var(--border-subtle);
+      color: var(--gold-light);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 990;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background: var(--gold);
+      color: #000;
+      transform: translateY(-3px);
+    }
+
+    /* ─── Responsive Media Queries ───────────────────────────── */
+    @media (max-width: 1040px) {
+      .hero-section {
+        grid-template-columns: 1fr;
+        padding-top: 130px;
+        text-align: center;
+      }
+
+      .hero-brand-lockup {
+        margin: 0 auto 24px;
+      }
+
+      .hero-desc {
+        margin: 0 auto 30px;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .hero-stats {
+        margin: 0 auto;
+      }
+
+      .showcase-stage-box {
+        grid-template-columns: 1fr;
+        padding: 32px 24px;
+      }
+
+      .screenshots-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .widget-atelier-box {
+        grid-template-columns: 1fr;
+        padding: 32px 20px;
+      }
+
+      .converter-atelier-card {
+        grid-template-columns: 1fr;
+        padding: 32px 20px;
+      }
+
+      .computus-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-title {
+        font-size: 2.3rem;
+      }
+      .section-heading {
+        font-size: 1.85rem;
+      }
+      .screenshots-grid {
+        grid-template-columns: 1fr;
+      }
+      .computus-grid {
+        grid-template-columns: 1fr;
+      }
+      .privacy-section {
+        padding: 32px 20px;
+      }
+      .android-widget-card {
+        width: 100%;
+        max-width: 320px;
+      }
+      .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .showcase-highlights-list {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>Zemen: Ethiopian Calendar · ዘመን Privacy Policy</h1>
-  <p class="tagline">Your Time. Your Tradition. Your Calendar.</p>
-  <p class="meta">Effective date: November 15, 2026 · Package: com.zemen.calendar</p>
 
-  <p>
-    Zemen: Ethiopian Calendar (“the App”) is an Ethiopian &amp; Gregorian calendar application.
-    This policy explains what data we process and why.
-  </p>
+  <!-- Background Ambient Particles Canvas -->
+  <canvas id="ambient-canvas"></canvas>
 
-  <h2>1. Summary</h2>
-  <ul>
-    <li>Calendar math, holidays, fasting, and your personal events stay on your device.</li>
-    <li>Optional ads (Google AdMob) may use advertising identifiers after consent where required.</li>
-    <li>Optional football scores use public third-party APIs when you open that tab.</li>
-  </ul>
+  <!-- Mouse Tracking Glow Effect -->
+  <div class="mouse-glow" id="mouseGlow"></div>
 
-  <h2>2. Data we process</h2>
-  <ul>
-    <li><strong>On-device:</strong> preferences, events/reminders, widget payloads.</li>
-    <li><strong>Ads (optional):</strong> device advertising ID, coarse location/IP as provided by the ad SDK, crash/diagnostic signals from Google Mobile Ads — subject to your consent choices (UMP).</li>
-    <li><strong>Network:</strong> football fixture requests when you use Football; no account is required.</li>
-  </ul>
+  <!-- ─── Floating Header / Navigation ───────────────────────── -->
+  <header class="nav-wrapper">
+    <nav class="navbar">
+      <a href="#hero" class="nav-brand">
+        <img src="assets/zemen_logo.jpg" alt="Zemen Calendar Logo" class="brand-logo-img" />
+        <div class="brand-text-col">
+          <span class="brand-title">ZEMEN · ዘመን</span>
+          <span class="brand-subtitle">Ethiopian Calendar</span>
+        </div>
+      </a>
 
-  <h2>3. Permissions</h2>
-  <ul>
-    <li>Notifications — event and holiday reminders you enable.</li>
-    <li>Internet — ads, consent forms, and optional live football data.</li>
-  </ul>
+      <ul class="nav-links">
+        <li><a href="#hero" class="nav-link">Home</a></li>
+        <li><a href="#showcase" class="nav-link">App Experience</a></li>
+        <li><a href="#screenshots" class="nav-link">Gallery</a></li>
+        <li><a href="#widgets" class="nav-link">3D Widgets</a></li>
+        <li><a href="#converter" class="nav-link">Converter</a></li>
+        <li><a href="#computus" class="nav-link">Bahire Hasab</a></li>
+        <li><a href="#privacy" class="nav-link">Privacy Policy</a></li>
+      </ul>
 
-  <h2>4. Children’s privacy</h2>
-  <p>The App is not directed at children under 13. We do not knowingly collect personal information from children.</p>
+      <div class="nav-actions">
+        <a href="#privacy" class="btn-cta-nav">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>Play Verified</span>
+        </a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">☰</button>
+      </div>
+    </nav>
+  </header>
 
-  <h2>5. Contact</h2>
-  <p>Questions about this policy: use the in-app Settings → Privacy section or your Play Store listing contact email.</p>
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer" id="mobileDrawer">
+    <a href="#hero" class="mobile-link">Home</a>
+    <a href="#showcase" class="mobile-link">App Experience &amp; Highlights</a>
+    <a href="#screenshots" class="mobile-link">High-Resolution Gallery</a>
+    <a href="#widgets" class="mobile-link">3D Android Widget Atelier</a>
+    <a href="#converter" class="mobile-link">Live Date Converter</a>
+    <a href="#computus" class="mobile-link">Bahire Hasab Computus</a>
+    <a href="#privacy" class="mobile-link">Privacy Policy</a>
+  </div>
 
-  <h2>6. Changes</h2>
-  <p>We may update this policy; the effective date above will change when we do.</p>
+  <main>
+    <!-- ─── Hero Section with 3D Device Showcase ─────────────── -->
+    <section id="hero" class="hero-section">
+      <div class="hero-content">
+        <!-- Executive App Icon Lockup -->
+        <div class="hero-brand-lockup">
+          <img src="assets/zemen_logo.jpg" alt="Zemen Calendar App Icon" class="hero-app-logo" />
+          <div class="hero-brand-info">
+            <div class="hero-brand-name-row">
+              <span class="hero-brand-title">ZEMEN CALENDAR</span>
+              <span class="verified-badge" title="Official Verified Release">✓</span>
+            </div>
+            <div class="hero-brand-meta-tags">
+              <span class="meta-tag-pill">v1.0.0</span>
+              <span>·</span>
+              <span>100% Offline Precision</span>
+              <span>·</span>
+              <span style="color: var(--gold-light);">Google Play Bundle</span>
+            </div>
+          </div>
+        </div>
+
+        <h1 class="hero-title">
+          Your Time. Your Tradition. Your Calendar.
+          <span class="hero-title-amharic">የኢትዮጵያ የቀን አቆጣጠር · ዘመን</span>
+        </h1>
+
+        <p class="hero-desc">
+          Zemen bridges timeless Ethiopian cultural heritage with executive modern horology. Featuring seamless dual Ethiopian &amp; Gregorian views, complete Orthodox Computus (ባሕረ ሐሳብ), 30 daily commemorated saints, luxury One UI home-screen widgets, and greeting card design studio.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#showcase" class="btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
+            <span>Explore App Experience</span>
+          </a>
+          <a href="#converter" class="btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            <span>Live Date Converter</span>
+          </a>
+          <a href="#privacy" class="btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Privacy Policy</span>
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-card">
+            <span class="stat-number">13</span>
+            <span class="stat-label">Months &amp; Pagume</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">30</span>
+            <span class="stat-label">Monthly Saints</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">4</span>
+            <span class="stat-label">Evangelists</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">0%</span>
+            <span class="stat-label">Data Collected</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3D Phone Tilt Container -->
+      <div class="hero-3d-showcase">
+        <div class="phone-tilt-card" id="phoneTilt" title="Tap to inspect full resolution screenshot">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <img id="activeScreenshot" src="screenshots/calendar_main.jpg" alt="Zemen Calendar App Screen" />
+          </div>
+        </div>
+
+        <!-- Floating Badges -->
+        <div class="float-pill pill-1">
+          <span class="pill-icon">✨</span>
+          <span>Dual Date Engine (EC + GC)</span>
+        </div>
+        <div class="float-pill pill-2">
+          <span class="pill-icon">⛪</span>
+          <span>ባሕረ ሐሳብ (Bahire Hasab)</span>
+        </div>
+        <div class="float-pill pill-3">
+          <span class="pill-icon">📱</span>
+          <span>Samsung One UI 2×2 Widget</span>
+        </div>
+
+        <!-- Interactive Screen Switcher Tabs -->
+        <div class="phone-screen-switcher">
+          <button class="screen-tab-btn active" data-img="screenshots/calendar_main.jpg" data-title="Month Grid &amp; Day Details">📅 Calendar</button>
+          <button class="screen-tab-btn" data-img="screenshots/holidays_list.jpg" data-title="Holidays &amp; Feasts">🎉 Holidays</button>
+          <button class="screen-tab-btn" data-img="screenshots/greeting_cards.jpg" data-title="Greeting Card Studio">🎨 Card Studio</button>
+          <button class="screen-tab-btn" data-img="screenshots/onboarding_intro.jpg" data-title="Core Philosophy">🌟 Welcome</button>
+          <button class="screen-tab-btn" data-img="screenshots/onboarding_lang.jpg" data-title="Languages &amp; Numerals">🌐 Languages</button>
+          <button class="screen-tab-btn" data-img="screenshots/onboarding_prefs.jpg" data-title="Fasting &amp; Saint Preferences">⚙️ Setup</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Interactive Feature Spotlight Showcase ─────────────── -->
+    <section id="showcase" class="section-wrap">
+      <div class="section-header">
+        <span class="section-kicker">የተሟላ የተጠቃሚ ተሞክሮ · App Experience</span>
+        <h2 class="section-heading">Crafted for Daily Life &amp; Sacred Tradition</h2>
+        <p class="section-subtext">
+          Explore how Zemen brings together mathematical calendar algorithms, Orthodox computus calculations, festive celebrations, and executive Android ergonomics.
+        </p>
+      </div>
+
+      <div class="showcase-stage-box">
+        <!-- Interactive Centerpiece Device -->
+        <div class="showcase-device-col">
+          <div class="showcase-phone-frame" id="showcasePhoneFrame" title="Click to view in 4K Lightbox">
+            <div class="phone-notch"></div>
+            <div class="showcase-phone-screen">
+              <img id="showcaseActiveImg" src="screenshots/calendar_main.jpg" alt="Zemen Showcase Screen" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic Feature Details Panel -->
+        <div class="showcase-details-col">
+          <span class="showcase-category-pill" id="showcaseCatPill">DUAL CALENDAR MATRIX</span>
+          <div>
+            <h3 class="showcase-feature-title" id="showcaseTitle">Dual Calendar Engine</h3>
+            <span class="showcase-feature-title-am" id="showcaseTitleAm">ድርብ የቀን መቁጠሪያ · 13 ወራትና ጳጉሜን</span>
+          </div>
+
+          <p class="showcase-feature-desc" id="showcaseDesc">
+            Side-by-side Ethiopian (EC 2019) and Gregorian (GC 2026) calendar matrices. Exact Julian Day Number (JDN) conversions, 13 months including Pagume, and interactive day detail sheet with direct event &amp; reminder creation.
+          </p>
+
+          <ul class="showcase-highlights-list" id="showcaseHighlights">
+            <li class="showcase-highlight-item"><span class="highlight-icon">✦</span><span>13 Ethiopian Months &amp; Pagume</span></li>
+            <li class="showcase-highlight-item"><span class="highlight-icon">✦</span><span>Exact JDN Mathematical Alignment</span></li>
+            <li class="showcase-highlight-item"><span class="highlight-icon">✦</span><span>Color-Coded Holiday &amp; Fast Dots</span></li>
+            <li class="showcase-highlight-item"><span class="highlight-icon">✦</span><span>Instant 1-Tap 'Today' Synchronization</span></li>
+          </ul>
+
+          <div style="display: flex; gap: 14px; align-items: center; margin-top: 6px;">
+            <button class="btn-primary" id="showcaseInspectBtn" style="padding: 10px 22px; font-size: 0.9rem;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              <span>Inspect in Full Resolution</span>
+            </button>
+          </div>
+
+          <!-- Quick Interactive Tabs -->
+          <div class="showcase-nav-pills">
+            <button class="showcase-nav-btn active" data-screen="calendar">📅 Dual Calendar</button>
+            <button class="showcase-nav-btn" data-screen="holidays">🎉 Feasts &amp; Holidays</button>
+            <button class="showcase-nav-btn" data-screen="cards">🎨 Card Studio</button>
+            <button class="showcase-nav-btn" data-screen="welcome">🌟 Core Philosophy</button>
+            <button class="showcase-nav-btn" data-screen="lang">🌐 5 Languages &amp; Ge'ez</button>
+            <button class="showcase-nav-btn" data-screen="prefs">⚙️ Fasting &amp; Saints Setup</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Full High-Resolution Visual Parity Gallery ──────────── -->
+    <section id="screenshots" class="section-wrap">
+      <div class="section-header">
+        <span class="section-kicker">የመተግበሪያው ገጽታ · Visual Parity</span>
+        <h2 class="section-heading">High-Resolution App Gallery</h2>
+        <p class="section-subtext">
+          Every screen captured directly from the production Android build. Tap any device chassis for crystal-clear full-screen inspection.
+        </p>
+      </div>
+
+      <div class="gallery-filter-bar">
+        <button class="gallery-filter-btn active" data-filter="all">All Screens (6)</button>
+        <button class="gallery-filter-btn" data-filter="calendar">Calendar &amp; Feasts</button>
+        <button class="gallery-filter-btn" data-filter="studio">Greeting Card Studio</button>
+        <button class="gallery-filter-btn" data-filter="onboarding">Personalization</button>
+      </div>
+
+      <div class="screenshots-grid">
+        <!-- 1. Dual Calendar -->
+        <div class="gallery-phone-card" data-category="calendar" data-img="screenshots/calendar_main.jpg" data-title="Month Grid &amp; Day Details Sheet">
+          <div class="gallery-phone-body">
+            <div class="gallery-phone-notch"></div>
+            <img src="screenshots/calendar_main.jpg" alt="Zemen Calendar Month Grid" loading="lazy" />
+          </div>
+          <div class="gallery-card-footer">
+            <span class="gallery-card-name">Month Grid &amp; Day Sheet</span>
+            <span class="gallery-card-tag">Dual Calendar</span>
+          </div>
+        </div>
+
+        <!-- 2. Holidays & Feasts -->
+        <div class="gallery-phone-card" data-category="calendar" data-img="screenshots/holidays_list.jpg" data-title="Ethiopian Holidays, Fasting &amp; Saints Directory">
+          <div class="gallery-phone-body">
+            <div class="gallery-phone-notch"></div>
+            <img src="screenshots/holidays_list.jpg" alt="Zemen Holidays and Feasts" loading="lazy" />
+          </div>
+          <div class="gallery-card-footer">
+            <span class="gallery-card-name">Holidays &amp; Feasts List</span>
+            <span class="gallery-card-tag">Holidays</span>
+          </div>
+        </div>
+
+        <!-- 3. Greeting Cards -->
+        <div class="gallery-phone-card" data-category="studio" data-img="screenshots/greeting_cards.jpg" data-title="Ethiopian Greeting Card Studio (እንቁጣጣሽ · New Year)">
+          <div class="gallery-phone-body">
+            <div class="gallery-phone-notch"></div>
+            <img src="screenshots/greeting_cards.jpg" alt="Greeting Card Studio" loading="lazy" />
+          </div>
+          <div class="gallery-card-footer">
+            <span class="gallery-card-name">Greeting Card Studio</span>
+            <span class="gallery-card-tag">Studio</span>
+          </div>
+        </div>
+
+        <!-- 4. Onboarding Intro -->
+        <div class="gallery-phone-card" data-category="onboarding" data-img="screenshots/onboarding_intro.jpg" data-title="Core Philosophy: The Calendar is the Heart">
+          <div class="gallery-phone-body">
+            <div class="gallery-phone-notch"></div>
+            <img src="screenshots/onboarding_intro.jpg" alt="Onboarding The Calendar is the Heart" loading="lazy" />
+          </div>
+          <div class="gallery-card-footer">
+            <span class="gallery-card-name">Welcome &amp; Architecture</span>
+            <span class="gallery-card-tag">Onboarding</span>
+          </div>
+        </div>
+
+        <!-- 5. Languages & Numerals -->
+        <div class="gallery-phone-card" data-category="onboarding" data-img="screenshots/onboarding_lang.jpg" data-title="Language Selection &amp; Ge'ez / Global Numerals">
+          <div class="gallery-phone-body">
+            <div class="gallery-phone-notch"></div>
+            <img src="screenshots/onboarding_lang.jpg" alt="Language &amp; Numerals Selection" loading="lazy" />
+          </div>
+          <div class="gallery-card-footer">
+            <span class="gallery-card-name">Languages &amp; Ge'ez Numerals</span>
+            <span class="gallery-card-tag">Personalize</span>
+          </div>
+        </div>
+
+        <!-- 6. Preferences -->
+        <div class="gallery-phone-card" data-category="onboarding" data-img="screenshots/onboarding_prefs.jpg" data-title="Fasting Days &amp; Monthly Saint Reminders Setup">
+          <div class="gallery-phone-body">
+            <div class="gallery-phone-notch"></div>
+            <img src="screenshots/onboarding_prefs.jpg" alt="Fasting &amp; Saint Reminders" loading="lazy" />
+          </div>
+          <div class="gallery-card-footer">
+            <span class="gallery-card-name">Fasting &amp; Saints Toggles</span>
+            <span class="gallery-card-tag">Preferences</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Interactive 3D Android Widget Atelier ───────────────── -->
+    <section id="widgets" class="section-wrap">
+      <div class="section-header">
+        <span class="section-kicker">የመነሻ ማያ ገጽ ዊጅት · Android Widget</span>
+        <h2 class="section-heading">Executive Android Home Widget</h2>
+        <p class="section-subtext">
+          Engineered for Samsung One UI, Google Pixel, and modern Android flagships with 1-tap instant refresh, authentic Ge'ez numerals, and dynamic theme palettes.
+        </p>
+      </div>
+
+      <div class="widget-atelier-box">
+        <!-- Live 3D Interactive Card Preview -->
+        <div class="widget-preview-stage">
+          <div class="android-widget-card" id="liveWidgetCard">
+            <div class="widget-header-row">
+              <span class="widget-brand-mark" id="wBrand">ዘመን · ZEMEN</span>
+              <div class="widget-badge-group">
+                <span class="widget-chip" id="wEvangelist">ዘመነ ሉቃስ</span>
+                <span class="widget-chip" id="wGeez">፲፬</span>
+                <span class="widget-sync-icon" id="wSync" title="Simulate Instant Widget Refresh">⟳</span>
+              </div>
+            </div>
+
+            <div class="widget-body-row">
+              <div class="widget-day-big" id="wDay">14</div>
+              <div class="widget-divider-v"></div>
+              <div class="widget-date-meta">
+                <span class="widget-month-title" id="wMonth">ኅዳር</span>
+                <span class="widget-year-title" id="wYear">2019 ዓ.ም</span>
+                <span class="widget-weekday-title" id="wWeekday">ሰኞ · Monday</span>
+              </div>
+            </div>
+
+            <div class="widget-divider-h"></div>
+
+            <div class="widget-footer-row">
+              <span class="widget-greg-text" id="wGreg">Nov 23, 2026 G.C.</span>
+              <span class="widget-saint-pill" id="wSaint">አባ አረጋዊ</span>
+            </div>
+          </div>
+
+          <!-- Date Stepper -->
+          <div class="widget-stepper-row">
+            <button class="stepper-btn" id="wPrevDay" title="Previous Day">◀</button>
+            <span style="font-size: 0.82rem; color: var(--text-muted);">Step Day Simulator</span>
+            <button class="stepper-btn" id="wNextDay" title="Next Day">▶</button>
+          </div>
+        </div>
+
+        <!-- Theme Picker Controls -->
+        <div class="widget-controls">
+          <span class="theme-selector-label">Choose Executive Theme Family:</span>
+          <div class="theme-btn-group">
+            <button class="theme-btn active" data-theme="noirGold">
+              <span class="theme-color-dot" style="background: #D4AF74;"></span>
+              <div>
+                <strong>Noir Gold (Champagne)</strong>
+                <div style="font-size: 0.76rem; color: var(--text-muted);">Black obsidian with warm champagne accents</div>
+              </div>
+            </button>
+            <button class="theme-btn" data-theme="emeraldHeritage">
+              <span class="theme-color-dot" style="background: #10B981;"></span>
+              <div>
+                <strong>Emerald Heritage</strong>
+                <div style="font-size: 0.76rem; color: var(--text-muted);">Sacred Ethiopian highland forest green</div>
+              </div>
+            </button>
+            <button class="theme-btn" data-theme="coralStudio">
+              <span class="theme-color-dot" style="background: #EF5350;"></span>
+              <div>
+                <strong>Coral Studio</strong>
+                <div style="font-size: 0.76rem; color: var(--text-muted);">Contemporary daylight high-contrast card</div>
+              </div>
+            </button>
+            <button class="theme-btn" data-theme="parchmentClassic">
+              <span class="theme-color-dot" style="background: #C4A574;"></span>
+              <div>
+                <strong>Parchment Classic</strong>
+                <div style="font-size: 0.76rem; color: var(--text-muted);">Ancient Ge'ez vellum manuscript parchment</div>
+              </div>
+            </button>
+            <button class="theme-btn" data-theme="minimalModern">
+              <span class="theme-color-dot" style="background: #94A3B8;"></span>
+              <div>
+                <strong>Minimal Modern</strong>
+                <div style="font-size: 0.76rem; color: var(--text-muted);">Clean slate titanium for minimalist setups</div>
+              </div>
+            </button>
+          </div>
+
+          <div class="widget-spec-badge">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>100% Samsung One UI &amp; Pixel glanceable parity: Zero ANR, instant IPC updates.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Interactive Live Converter Atelier ─────────────────── -->
+    <section id="converter" class="section-wrap">
+      <div class="section-header">
+        <span class="section-kicker">የቀን መቀየሪያ · Live Date Conversion</span>
+        <h2 class="section-heading">Bidirectional Precision Converter</h2>
+        <p class="section-subtext">
+          Convert seamlessly between the Ethiopian calendar and the Gregorian calendar with exact Julian Day Number (JDN) algorithms and Ge'ez numeral rendering.
+        </p>
+      </div>
+
+      <div class="converter-atelier-card">
+        <!-- Ethiopian Input Side -->
+        <div class="converter-pane">
+          <div class="converter-pane-title">
+            <span>🇪🇹 Ethiopian Date (ዓ.ም)</span>
+          </div>
+          <div class="converter-inputs-grid">
+            <div class="converter-field-group">
+              <label for="ethDay">Day (ቀን)</label>
+              <input type="number" id="ethDay" class="converter-input" min="1" max="30" value="14" />
+            </div>
+            <div class="converter-field-group">
+              <label for="ethMonth">Month (ወር)</label>
+              <select id="ethMonth" class="converter-select">
+                <option value="1">መስከረም (1)</option>
+                <option value="2">ጥቅምት (2)</option>
+                <option value="3" selected>ኅዳር (3)</option>
+                <option value="4">ታኅሣሥ (4)</option>
+                <option value="5">ጥር (5)</option>
+                <option value="6">የካቲት (6)</option>
+                <option value="7">መጋቢት (7)</option>
+                <option value="8">ሚያዝያ (8)</option>
+                <option value="9">ግንቦት (9)</option>
+                <option value="10">ሰኔ (10)</option>
+                <option value="11">ሐምሌ (11)</option>
+                <option value="12">ነሐሴ (12)</option>
+                <option value="13">ጳጉሜን (13)</option>
+              </select>
+            </div>
+            <div class="converter-field-group">
+              <label for="ethYear">Year (ዓመት)</label>
+              <input type="number" id="ethYear" class="converter-input" min="1" max="3000" value="2019" />
+            </div>
+          </div>
+
+          <div class="converter-result-box">
+            <span style="font-size: 0.78rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Converted Gregorian Date</span>
+            <div class="converter-result-main" id="gregResult">Nov 23, 2026 G.C.</div>
+            <div class="converter-result-geez" id="gregWeekday">ሰኞ · Monday</div>
+            <div class="converter-result-meta" id="gregJDN">Julian Day Number: 2461368 · Day 74 of Ethiopian Year</div>
+          </div>
+        </div>
+
+        <!-- Gregorian Input Side -->
+        <div class="converter-pane">
+          <div class="converter-pane-title">
+            <span>🌍 Gregorian Date (እ.ኤ.አ)</span>
+          </div>
+          <div class="converter-inputs-grid">
+            <div class="converter-field-group">
+              <label for="gregDayInput">Day</label>
+              <input type="number" id="gregDayInput" class="converter-input" min="1" max="31" value="23" />
+            </div>
+            <div class="converter-field-group">
+              <label for="gregMonthInput">Month</label>
+              <select id="gregMonthInput" class="converter-select">
+                <option value="1">January (1)</option>
+                <option value="2">February (2)</option>
+                <option value="3">March (3)</option>
+                <option value="4">April (4)</option>
+                <option value="5">May (5)</option>
+                <option value="6">June (6)</option>
+                <option value="7">July (7)</option>
+                <option value="8">August (8)</option>
+                <option value="9">September (9)</option>
+                <option value="10">October (10)</option>
+                <option value="11" selected>November (11)</option>
+                <option value="12">December (12)</option>
+              </select>
+            </div>
+            <div class="converter-field-group">
+              <label for="gregYearInput">Year</label>
+              <input type="number" id="gregYearInput" class="converter-input" min="1" max="3000" value="2026" />
+            </div>
+          </div>
+
+          <div class="converter-result-box">
+            <span style="font-size: 0.78rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Converted Ethiopian Date</span>
+            <div class="converter-result-main" id="ethResult">ኅዳር 14, 2019 ዓ.ም</div>
+            <div class="converter-result-geez" id="ethResultGeez">ኅዳር ፲፬ ፳፻፲፱ · ዘመነ ሉቃስ</div>
+            <div class="converter-result-meta" id="ethResultSaint">Daily Saint: አባ አረጋዊ (Aba Aregawi)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Bahire Hasab Computus Explorer ─────────────────────── -->
+    <section id="computus" class="section-wrap">
+      <div class="section-header">
+        <span class="section-kicker">የዘመን ቀመር · Computus</span>
+        <h2 class="section-heading">Bahire Hasab (ባሕረ ሐሳብ) Explorer</h2>
+        <p class="section-subtext">
+          The ancient Orthodox Tewahedo computus system. Calculate movable fasts, feasts, and liturgical metrics across centuries with complete mathematical fidelity.
+        </p>
+      </div>
+
+      <div class="computus-card">
+        <div class="computus-control-bar">
+          <div class="computus-year-picker">
+            <label for="computusYearInput" style="font-weight: 700; color: var(--gold-light);">Enter Ethiopian Year (ዓ.ም):</label>
+            <input type="number" id="computusYearInput" class="computus-year-input" value="2019" min="1" max="9999" />
+          </div>
+          <div style="font-size: 0.9rem; color: var(--text-muted);">
+            Active Evangelist: <strong style="color: var(--emerald-light);" id="computusEvangelistText">ዘመነ ሉቃስ (Luke)</strong>
+          </div>
+        </div>
+
+        <div class="computus-grid">
+          <div class="computus-item">
+            <span class="computus-item-label">ዓመተ ዓለም (Amete Alem)</span>
+            <span class="computus-item-val" id="valAmeteAlem">7519</span>
+            <span class="computus-item-desc">5500 + Ethiopian Year</span>
+          </div>
+          <div class="computus-item">
+            <span class="computus-item-label">ወንበር (Wenber)</span>
+            <span class="computus-item-val" id="valWenber">14</span>
+            <span class="computus-item-desc">(Amete Alem - 1) % 19</span>
+          </div>
+          <div class="computus-item">
+            <span class="computus-item-label">አበቅቴ (Abaqte)</span>
+            <span class="computus-item-val" id="valAbaqte">16</span>
+            <span class="computus-item-desc">(Wenber × 11) % 30</span>
+          </div>
+          <div class="computus-item">
+            <span class="computus-item-label">መጥቅዕ (Metqi)</span>
+            <span class="computus-item-val" id="valMetqi">14</span>
+            <span class="computus-item-desc">30 - Abaqte</span>
+          </div>
+          <div class="computus-item">
+            <span class="computus-item-label">ጾመ ነነዌ (Nineveh)</span>
+            <span class="computus-item-val" id="valNenewe">የካቲት 16</span>
+            <span class="computus-item-desc">Fast of Nineveh</span>
+          </div>
+          <div class="computus-item">
+            <span class="computus-item-label">ዓቢይ ጾም (Great Lent)</span>
+            <span class="computus-item-val" id="valAbiyTsom">የካቲት 30</span>
+            <span class="computus-item-desc">Great Lent begins</span>
+          </div>
+          <div class="computus-item">
+            <span class="computus-item-label">ሆሣዕና (Palm Sunday)</span>
+            <span class="computus-item-val" id="valHosanna">ሚያዝያ 19</span>
+            <span class="computus-item-desc">Hosanna</span>
+          </div>
+          <div class="computus-item">
+            <span class="computus-item-label">ትንሣኤ · ፋሲካ (Easter)</span>
+            <span class="computus-item-val" id="valFasika">ሚያዝያ 26</span>
+            <span class="computus-item-desc">Holy Fasika</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 30 Commemorated Saints Explorer ─────────────────────── -->
+    <section id="saints" class="section-wrap">
+      <div class="section-header">
+        <span class="section-kicker">የወሩ በዓላት · 30 Daily Saints</span>
+        <h2 class="section-heading">Canonical Commemorated Saints</h2>
+        <p class="section-subtext">
+          Every day of the Ethiopian month commemorates canonical saints and sacred events in the Orthodox Tewahedo synaxarium. Search or tap any day to inspect.
+        </p>
+      </div>
+
+      <div class="saints-container">
+        <div class="saints-search-bar">
+          <input type="text" id="saintsSearchInput" class="saints-search-input" placeholder="Search saint name (e.g. ሚካኤል, ማርያም, ጊዮርጊስ, Michael, Mary)..." />
+        </div>
+
+        <div class="saints-grid" id="saintsGrid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Core App Features Grid ─────────────────────────────── -->
+    <section id="features" class="section-wrap">
+      <div class="section-header">
+        <span class="section-kicker">ቁልፍ ገጽታዎች · Core Capabilities</span>
+        <h2 class="section-heading">Built with Mathematical Precision</h2>
+        <p class="section-subtext">
+          Everything you need for traditional Ethiopian date reckoning, Orthodox computus calculations, and modern schedule management.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-box">📅</div>
+          <h3 class="feature-card-title">Dual Calendar Engine</h3>
+          <p class="feature-card-desc">
+            Seamless side-by-side month, week, year, and day grids aligning the 13 Ethiopian months with Gregorian dates and Julian Day Number (JDN) algorithms.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">⛪</div>
+          <h3 class="feature-card-title">Bahire Hasab (ባሕረ ሐሳብ)</h3>
+          <p class="feature-card-desc">
+            Full Orthodox Tewahedo computus calculations across centuries: Amete Alem (ዓመተ ዓለም), Wenber, Metqi, Tsome Nenewe, Abiy Tsom, and Holy Fasika.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">🕊️</div>
+          <h3 class="feature-card-title">30 Daily Saints (የወሩ በዓላት)</h3>
+          <p class="feature-card-desc">
+            Every day from 1 to 30 commemorates its canonical saint (ልደታ, ሥላሴ, ሚካኤል, ቂርቆስ, ኪዳነ ምሕረት, ማርያም, ጊዮርጊስ, ተክለ ሃይማኖት, መድኃኔ ዓለም).
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">⏱️</div>
+          <h3 class="feature-card-title">Ethiopian Sunrise Time</h3>
+          <p class="feature-card-desc">
+            Authentic 12-hour daytime and nighttime Ethiopian timekeeping starting from 6:00 AM / 12:00 Ken (ቀን), synchronized with international clocks.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">🎨</div>
+          <h3 class="feature-card-title">Greeting Card Studio</h3>
+          <p class="feature-card-desc">
+            Create and customize luxury Ethiopian greeting cards for Enkutatash (እንቁጣጣሽ), Meskel (መስቀል), Genna (ገና), and Fasika (ፋሲካ) with custom typography.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">🔄</div>
+          <h3 class="feature-card-title">Date, Time &amp; Age Converter</h3>
+          <p class="feature-card-desc">
+            Instant bidirectional conversion between Ethiopian and Gregorian dates with full Ge'ez numeral encoding (፩, ፲, ፳, ፻) and exact age calculation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Official Google Play Privacy Policy Document ────────── -->
+    <section id="privacy" class="section-wrap">
+      <div class="privacy-section">
+        <div class="privacy-header">
+          <div class="privacy-kicker">Legal · Privacy Notice</div>
+          <h2 class="privacy-doc-title">Privacy Policy</h2>
+          <div class="privacy-meta-row">
+            <span class="privacy-meta-badge">Effective: 23 November 2026</span>
+            <span class="privacy-meta-badge neutral">Package: com.zemen.calendar</span>
+            <span class="privacy-meta-badge neutral">Controller: FitsumHub</span>
+          </div>
+          <p class="privacy-lead">
+            This Privacy Policy describes how <strong>Zemen: Ethiopian Calendar</strong> (“Zemen”, “the App”, “we”, “us”)
+            handles information when you use the Android application published under package
+            <code>com.zemen.calendar</code>. It is written to support Google Play Data safety disclosures and applicable
+            privacy expectations for a primarily offline productivity application.
+          </p>
+          <div class="privacy-callout">
+            <div class="privacy-pill">
+              <strong>Offline-first</strong>
+              <span>Core calendar, events, and preferences stay on your device.</span>
+            </div>
+            <div class="privacy-pill">
+              <strong>No account required</strong>
+              <span>We do not create user accounts or cloud profiles.</span>
+            </div>
+            <div class="privacy-pill">
+              <strong>Optional network</strong>
+              <span>Internet is used only for optional football scores and optional ads.</span>
+            </div>
+            <div class="privacy-pill">
+              <strong>Your control</strong>
+              <span>Reminders, football tab, and advertising consent remain user-controlled.</span>
+            </div>
+          </div>
+        </div>
+
+        <nav class="privacy-toc" aria-label="Privacy policy contents">
+          <div class="privacy-toc-title">Contents</div>
+          <ul class="privacy-toc-links">
+            <li><a href="#clause-1" class="privacy-toc-link">Who we are</a></li>
+            <li><a href="#clause-2" class="privacy-toc-link">Information we process</a></li>
+            <li><a href="#clause-3" class="privacy-toc-link">How we use information</a></li>
+            <li><a href="#clause-4" class="privacy-toc-link">Android permissions</a></li>
+            <li><a href="#clause-5" class="privacy-toc-link">Advertising &amp; consent</a></li>
+            <li><a href="#clause-6" class="privacy-toc-link">Third-party services</a></li>
+            <li><a href="#clause-7" class="privacy-toc-link">Data retention &amp; security</a></li>
+            <li><a href="#clause-8" class="privacy-toc-link">Children’s privacy</a></li>
+            <li><a href="#clause-9" class="privacy-toc-link">Your choices &amp; rights</a></li>
+            <li><a href="#clause-10" class="privacy-toc-link">Policy updates &amp; contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="policy-clause" id="clause-1">
+          <h3 class="policy-clause-title">1. Who we are</h3>
+          <p>
+            Zemen is developed and published by <strong>Fitsum Enunu / FitsumHub</strong> (“Developer”).
+            For privacy inquiries related to the App, contact us using the details in Section 10.
+          </p>
+          <p>
+            The App provides dual Ethiopian and Gregorian calendar tools, Bahire Hasab computus, holidays and fasting
+            information, local events and reminders, home-screen widgets, and optional football scores.
+          </p>
+        </div>
+
+        <div class="policy-clause" id="clause-2">
+          <h3 class="policy-clause-title">2. Information we process</h3>
+          <p>
+            Zemen is designed so that <strong>personal calendar content remains on your device</strong>.
+            We do not operate a Zemen cloud account system that stores your events, notes, or preferences on our servers.
+          </p>
+          <div class="policy-table-wrap">
+            <table class="policy-table">
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Examples</th>
+                  <th>Storage</th>
+                  <th>Shared externally?</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Personal events &amp; reminders</strong></td>
+                  <td>Event titles, dates, notes, alarm settings</td>
+                  <td>On-device SQLite database</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <td><strong>App preferences</strong></td>
+                  <td>Language, theme, calendar format, numeral style, feature toggles</td>
+                  <td>On-device SharedPreferences</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <td><strong>Home widget display data</strong></td>
+                  <td>Current date, weekday, daily saint label</td>
+                  <td>On-device widget IPC / local cache</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <td><strong>Optional football data</strong></td>
+                  <td>Public match fixtures, scores, standings</td>
+                  <td>Transient in-memory / temporary cache</td>
+                  <td>Yes — requested from public sports data providers when the Football feature is used</td>
+                </tr>
+                <tr>
+                  <td><strong>Optional advertising data</strong></td>
+                  <td>Advertising ID, coarse device/network signals used by ad SDKs</td>
+                  <td>Processed by Google Mobile Ads / consent SDK when ads are enabled</td>
+                  <td>Yes — only when advertising is active and, where required, after consent</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="policy-note">
+            Calendar mathematics (Ethiopian/Gregorian conversion, Bahire Hasab, saints, and fasting logic) are computed
+            locally. Using the core calendar does not require an internet connection.
+          </p>
+        </div>
+
+        <div class="policy-clause" id="clause-3">
+          <h3 class="policy-clause-title">3. How we use information</h3>
+          <p>We process information only to operate and improve the App’s advertised features:</p>
+          <ul class="policy-list">
+            <li>Display dual-calendar dates, holidays, fasting periods, and related cultural/religious observances.</li>
+            <li>Store and surface personal events, reminders, and home-screen widgets that you configure.</li>
+            <li>Remember your language, theme, and display preferences.</li>
+            <li>Fetch optional public football information when you enable and open that feature.</li>
+            <li>Serve optional advertisements and measure basic ad performance when advertising is enabled.</li>
+            <li>Present and honor privacy/consent choices required by applicable law (for example via Google UMP).</li>
+          </ul>
+          <p>
+            We do <strong>not</strong> sell personal event content, and we do not use your local event titles or notes
+            for advertising profiles.
+          </p>
+        </div>
+
+        <div class="policy-clause" id="clause-4">
+          <h3 class="policy-clause-title">4. Android permissions</h3>
+          <p>The App requests only permissions needed for functionality you can see and control:</p>
+          <ul class="policy-list">
+            <li><strong>POST_NOTIFICATIONS</strong> — to deliver event and holiday reminders you enable (Android 13+).</li>
+            <li><strong>SCHEDULE_EXACT_ALARM</strong> — to fire reminders at the scheduled time where the platform allows exact alarms.</li>
+            <li><strong>RECEIVE_BOOT_COMPLETED</strong> — to restore scheduled reminders after device reboot.</li>
+            <li><strong>VIBRATE / WAKE_LOCK</strong> — to support reliable reminder delivery and notification UX.</li>
+            <li><strong>INTERNET / ACCESS_NETWORK_STATE</strong> — solely for optional football updates, optional ads, and consent messaging when those features are active.</li>
+          </ul>
+          <p>
+            You may deny notification permission; core calendar conversion and browsing still work. Reminder delivery
+            will be limited or unavailable without permission.
+          </p>
+        </div>
+
+        <div class="policy-clause" id="clause-5">
+          <h3 class="policy-clause-title">5. Advertising &amp; consent</h3>
+          <p>
+            The App includes Google Mobile Ads SDK integration for optional monetization. <strong>Release builds remain
+            ad-free until production AdMob unit IDs are configured.</strong> When advertising is enabled:
+          </p>
+          <ul class="policy-list">
+            <li>Ads may be shown on non-calendar surfaces of the App.</li>
+            <li>In regions covered by GDPR, CCPA/CPRA, or similar frameworks, Google User Messaging Platform (UMP)
+                may request consent before personalized advertising.</li>
+            <li>You may manage platform-level advertising preferences through your device / Google settings, and
+                review in-app consent options where available.</li>
+          </ul>
+          <p>
+            Advertising partners may process limited device and usage signals under their own policies. See Google’s
+            advertising privacy materials for details on Google Mobile Ads.
+          </p>
+        </div>
+
+        <div class="policy-clause" id="clause-6">
+          <h3 class="policy-clause-title">6. Third-party services</h3>
+          <p>Depending on which optional features you use, the App may communicate with:</p>
+          <ul class="policy-list">
+            <li><strong>Public sports data providers</strong> (for example TheSportsDB and similar public endpoints) to display football fixtures and scores when the Football tab is enabled.</li>
+            <li><strong>Google Mobile Ads / UMP</strong> when advertising is enabled, for ad delivery and consent management.</li>
+          </ul>
+          <p>
+            These services process data under their respective privacy policies. Core calendar use does not require
+            those network calls.
+          </p>
+        </div>
+
+        <div class="policy-clause" id="clause-7">
+          <h3 class="policy-clause-title">7. Data retention &amp; security</h3>
+          <p>
+            On-device event and preference data remain on your device until you delete them in the App, clear App storage,
+            or uninstall the App. Uninstalling Zemen removes local App data stored in the Android application sandbox.
+          </p>
+          <p>
+            Local data is protected by Android’s application sandbox and the security controls of your device
+            (for example screen lock and OS-level encryption where enabled). No method of electronic storage is
+            perfectly secure; please keep your device protected.
+          </p>
+        </div>
+
+        <div class="policy-clause" id="clause-8">
+          <h3 class="policy-clause-title">8. Children’s privacy</h3>
+          <p>
+            Zemen is intended for a general audience. We do not knowingly collect personal information from children
+            under 13. If you believe a child has provided personal information to us through a channel we control,
+            contact us and we will take appropriate steps.
+          </p>
+        </div>
+
+        <div class="policy-clause" id="clause-9">
+          <h3 class="policy-clause-title">9. Your choices &amp; rights</h3>
+          <p>Depending on your region, you may have rights to access, correct, delete, or restrict certain processing.
+          Because most personal content never leaves your device, the most direct controls are:</p>
+          <ul class="policy-list">
+            <li>Edit or delete events inside the App.</li>
+            <li>Disable reminders and notification permission in Android Settings.</li>
+            <li>Hide the Football tab in App Settings (optional feature).</li>
+            <li>Clear App storage or uninstall the App to remove local data.</li>
+            <li>Manage advertising / consent preferences where ads are enabled.</li>
+          </ul>
+          <p>
+            For privacy requests that require Developer assistance, email us using the contact details below. We will
+            respond within a reasonable period.
+          </p>
+        </div>
+
+        <div class="policy-clause" id="clause-10">
+          <h3 class="policy-clause-title">10. Policy updates &amp; contact</h3>
+          <p>
+            We may update this Privacy Policy to reflect product, legal, or operational changes. The “Effective” date
+            at the top of this page will be revised when material updates occur. Continued use of the App after an
+            update constitutes notice of the revised policy where permitted by law.
+          </p>
+          <div class="policy-contact-card">
+            <div><strong>App:</strong> Zemen: Ethiopian Calendar · ዘመን</div>
+            <div><strong>Package ID:</strong> <code>com.zemen.calendar</code></div>
+            <div><strong>Developer:</strong> Fitsum Enunu / FitsumHub</div>
+            <div><strong>Privacy &amp; support email:</strong> <a href="mailto:aplusethiopia1@gmail.com">aplusethiopia1@gmail.com</a></div>
+            <div><strong>Policy URL:</strong> this page (host on HTTPS and paste the URL into Google Play Console → App content → Privacy policy)</div>
+          </div>
+          <p class="policy-updated">
+            Last updated: 23 November 2026 · This notice is provided for transparency and Google Play compliance.
+            It does not create rights beyond those required by applicable law.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ─── Interactive Lightbox Modal ─────────────────────────── -->
+  <div class="lightbox-modal" id="lightboxModal">
+    <div class="lightbox-content">
+      <button class="lightbox-close-btn" id="lightboxClose" aria-label="Close modal">✕</button>
+      <img src="" alt="Full Resolution App Screenshot" class="lightbox-img" id="lightboxImg" />
+      <span class="lightbox-caption" id="lightboxCaption">App Screen</span>
+    </div>
+  </div>
+
+  <!-- ─── Floating Back to Top Button ────────────────────────── -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <!-- ─── Site Footer ─────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand-lockup">
+        <img src="assets/zemen_logo.jpg" alt="Zemen Logo" class="footer-logo-img" />
+        <div class="footer-brand">Zemen: Ethiopian Calendar · ዘመን</div>
+      </div>
+      <p class="footer-tagline">Your Time. Your Tradition. Your Calendar. Built for Android.</p>
+      <ul class="footer-links">
+        <li><a href="#hero" class="footer-link">Home</a></li>
+        <li><a href="#showcase" class="footer-link">App Experience</a></li>
+        <li><a href="#screenshots" class="footer-link">Screenshots</a></li>
+        <li><a href="#widgets" class="footer-link">Android Widget</a></li>
+        <li><a href="#converter" class="footer-link">Date Converter</a></li>
+        <li><a href="#computus" class="footer-link">Bahire Hasab</a></li>
+        <li><a href="#privacy" class="footer-link">Privacy Policy</a></li>
+      </ul>
+      <p class="footer-copy">
+        &copy; 2026 FitsumHub / Zemen Calendar. Packaged for Google Play Store (<code>com.zemen.calendar</code>). All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ─── Interactive JavaScript Engine ───────────────────────── -->
+  <script>
+    // ─── 1. Mouse Tracking Parallax Glow ───────────────────────
+    const mouseGlow = document.getElementById('mouseGlow');
+    if (mouseGlow) {
+      document.addEventListener('mousemove', (e) => {
+        mouseGlow.style.left = `${e.clientX}px`;
+        mouseGlow.style.top = `${e.clientY}px`;
+      });
+    }
+
+    // ─── 2. 3D Phone Tilt Parallax for Hero ────────────────────
+    const phoneTilt = document.getElementById('phoneTilt');
+    if (phoneTilt) {
+      document.addEventListener('mousemove', (e) => {
+        const rect = phoneTilt.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        const deltaX = (e.clientX - centerX) / (window.innerWidth / 2);
+        const deltaY = (e.clientY - centerY) / (window.innerHeight / 2);
+
+        const rotateY = Math.max(-18, Math.min(18, deltaX * 18));
+        const rotateX = Math.max(-18, Math.min(18, -deltaY * 18));
+
+        phoneTilt.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+      });
+
+      phoneTilt.addEventListener('mouseleave', () => {
+        phoneTilt.style.transform = 'rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+      });
+    }
+
+    // ─── 3. Screen Tab Switcher in Hero ────────────────────────
+    const screenTabBtns = document.querySelectorAll('.screen-tab-btn');
+    const activeScreenshot = document.getElementById('activeScreenshot');
+
+    screenTabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        screenTabBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        if (activeScreenshot) {
+          activeScreenshot.style.opacity = '0';
+          setTimeout(() => {
+            activeScreenshot.src = btn.dataset.img;
+            activeScreenshot.style.opacity = '1';
+          }, 150);
+        }
+      });
+    });
+
+    // ─── 4. Interactive Feature Spotlight Showcase ─────────────
+    const showcaseData = {
+      calendar: {
+        cat: "DUAL CALENDAR MATRIX",
+        title: "Dual Calendar Engine",
+        titleAm: "ድርብ የቀን መቁጠሪያ · 13 ወራትና ጳጉሜን",
+        desc: "Side-by-side Ethiopian (EC 2019) and Gregorian (GC 2026) calendar matrices. Exact Julian Day Number (JDN) conversions, 13 months including Pagume, and interactive day detail sheet with direct event & reminder creation.",
+        img: "screenshots/calendar_main.jpg",
+        highlights: [
+          "13 Ethiopian Months & Pagume",
+          "Exact JDN Mathematical Alignment",
+          "Color-Coded Holiday & Fast Dots",
+          "Instant 1-Tap 'Today' Synchronization"
+        ]
+      },
+      holidays: {
+        cat: "LITURGICAL DIRECTORY",
+        title: "Feasts, Holidays & Fasting",
+        titleAm: "በዓላት፣ አጽዋማት እና የወሩ ጻድቃን",
+        desc: "Comprehensive liturgical and national holiday directory for 2019 ዓ.ም and centuries beyond. Categorized tabs for Orthodox Tewahedo fasting periods, monthly commemorated saints, public holidays, and Islamic observances.",
+        img: "screenshots/holidays_list.jpg",
+        highlights: [
+          "41+ Verified Annual Holidays",
+          "Quick-Jump Year Selector (2019–2039)",
+          "Smart Search & Category Filter Chips",
+          "Fasting Countdowns & Reminders"
+        ]
+      },
+      cards: {
+        cat: "GREETING STUDIO",
+        title: "Greeting Card Studio",
+        titleAm: "የበዓል ካርድ ስቱዲዮ · መልካም አዲስ ዓመት",
+        desc: "Design and share bespoke Ethiopian holiday greeting cards for Enkutatash (እንቁጣጣሽ), Meskel (መስቀል), Genna (ገና), and Fasika (ፋሲካ). Framed with the iconic Ethiopian tricolor ribbon, authentic Ge'ez typography, and custom dedication blessings.",
+        img: "screenshots/greeting_cards.jpg",
+        highlights: [
+          "Authentic Ethiopian Tricolor Ribbon Border",
+          "Custom Recipient Dedication Names",
+          "Traditional Adey Abeba Floral Emblem",
+          "1-Tap HD Image Export & Social Sharing"
+        ]
+      },
+      welcome: {
+        cat: "PRODUCT PHILOSOPHY",
+        title: "The Calendar is the Heart",
+        titleAm: "ቀን መቁጠሪያው ማዕከል ነው · 100% Offline",
+        desc: "Designed with an executive modern philosophy: everything in Zemen serves the date you are viewing. Distraction-free, fluid animations, and 100% offline autonomy without any cloud accounts.",
+        img: "screenshots/onboarding_intro.jpg",
+        highlights: [
+          "Distraction-Free Ergonomics",
+          "100% On-Device Data Sovereignty",
+          "Fluid Material 3 Transitions",
+          "Zero Cloud Account Dependency"
+        ]
+      },
+      lang: {
+        cat: "MULTILINGUAL & NUMERALS",
+        title: "5 Native Languages & Ge'ez",
+        titleAm: "አማርኛ፣ English፣ Oromoo፣ ትግርኛ፣ Français",
+        desc: "Full native localization in Amharic (አማርኛ), English, Afaan Oromoo, Tigrinya (ትግርኛ), and French (Français). Seamless 1-tap switching between global Western digits (1, 2, 3) and sacred Ge'ez numerals (፩, ፲, ፳, ፻).",
+        img: "screenshots/onboarding_lang.jpg",
+        highlights: [
+          "5 Native Localized Languages",
+          "Authentic Ge'ez Numeral Encoding",
+          "High-Contrast Typography Legibility",
+          "Instant Live Language Preview"
+        ]
+      },
+      prefs: {
+        cat: "PERSONALIZATION",
+        title: "Fasting & Saints Reminders",
+        titleAm: "የጾም ቀናት ማድመቂያ እና የወር ጻድቃን",
+        desc: "Fine-tune your personal calendar with toggles for Orthodox fasting day highlights, daily saint names on day cells, exact alarms for holidays, and optional live football match fixtures.",
+        img: "screenshots/onboarding_prefs.jpg",
+        highlights: [
+          "Configurable Fasting Day Highlighters",
+          "30 Daily Commemorated Saints Toggles",
+          "Exact Alarm Wake Locks for Events",
+          "Optional Football Fixtures & Scores"
+        ]
+      }
+    };
+
+    const showcaseCatPill = document.getElementById('showcaseCatPill');
+    const showcaseTitle = document.getElementById('showcaseTitle');
+    const showcaseTitleAm = document.getElementById('showcaseTitleAm');
+    const showcaseDesc = document.getElementById('showcaseDesc');
+    const showcaseActiveImg = document.getElementById('showcaseActiveImg');
+    const showcaseHighlights = document.getElementById('showcaseHighlights');
+    const showcaseNavBtns = document.querySelectorAll('.showcase-nav-btn');
+    const showcaseInspectBtn = document.getElementById('showcaseInspectBtn');
+    const showcasePhoneFrame = document.getElementById('showcasePhoneFrame');
+
+    let currentShowcaseScreen = 'calendar';
+
+    function updateShowcase(screenKey) {
+      const data = showcaseData[screenKey];
+      if (!data) return;
+      currentShowcaseScreen = screenKey;
+
+      showcaseNavBtns.forEach(btn => {
+        if (btn.dataset.screen === screenKey) btn.classList.add('active');
+        else btn.classList.remove('active');
+      });
+
+      if (showcaseCatPill) showcaseCatPill.textContent = data.cat;
+      if (showcaseTitle) showcaseTitle.textContent = data.title;
+      if (showcaseTitleAm) showcaseTitleAm.textContent = data.titleAm;
+      if (showcaseDesc) showcaseDesc.textContent = data.desc;
+
+      if (showcaseActiveImg) {
+        showcaseActiveImg.style.opacity = '0';
+        setTimeout(() => {
+          showcaseActiveImg.src = data.img;
+          showcaseActiveImg.style.opacity = '1';
+        }, 150);
+      }
+
+      if (showcaseHighlights) {
+        showcaseHighlights.innerHTML = data.highlights
+          .map(h => `<li class="showcase-highlight-item"><span class="highlight-icon">✦</span><span>${h}</span></li>`)
+          .join('');
+      }
+    }
+
+    showcaseNavBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        updateShowcase(btn.dataset.screen);
+      });
+    });
+
+    if (showcaseInspectBtn) {
+      showcaseInspectBtn.addEventListener('click', () => {
+        const data = showcaseData[currentShowcaseScreen];
+        if (data) openLightbox(data.img, `${data.title} (${data.titleAm})`);
+      });
+    }
+
+    if (showcasePhoneFrame) {
+      showcasePhoneFrame.addEventListener('click', () => {
+        const data = showcaseData[currentShowcaseScreen];
+        if (data) openLightbox(data.img, `${data.title} (${data.titleAm})`);
+      });
+    }
+
+    // ─── 5. Gallery Category Filter & Phone Cards ──────────────
+    const galleryFilterBtns = document.querySelectorAll('.gallery-filter-btn');
+    const galleryPhoneCards = document.querySelectorAll('.gallery-phone-card');
+
+    galleryFilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        galleryFilterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+
+        galleryPhoneCards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    galleryPhoneCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const img = card.dataset.img;
+        const title = card.dataset.title;
+        openLightbox(img, title);
+      });
+    });
+
+    // ─── 6. Lightbox Modal ─────────────────────────────────────
+    const lightboxModal = document.getElementById('lightboxModal');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    function openLightbox(src, caption) {
+      if (!lightboxModal || !lightboxImg) return;
+      lightboxImg.src = src;
+      if (lightboxCaption) lightboxCaption.textContent = caption || "App Screenshot";
+      lightboxModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      if (!lightboxModal) return;
+      lightboxModal.classList.remove('open');
+      document.body.style.overflow = 'auto';
+    }
+
+    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+    if (lightboxModal) {
+      lightboxModal.addEventListener('click', (e) => {
+        if (e.target === lightboxModal) closeLightbox();
+      });
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    if (phoneTilt) {
+      phoneTilt.addEventListener('click', () => {
+        if (activeScreenshot) openLightbox(activeScreenshot.src, "Zemen Calendar Interactive Screen");
+      });
+    }
+
+    // ─── 7. Android Widget 3D Parallax & Theme Palette Switcher ─
+    const widgetThemes = {
+      noirGold: {
+        bg: 'linear-gradient(135deg, #1E2533 0%, #0A0C10 50%, #17120C 100%)',
+        border: '1.2px solid #3A3224',
+        brand: '#D4AF74',
+        day: '#D4AF74',
+        month: '#FAF6EF',
+        year: '#C8A96B',
+        chipBg: 'rgba(212, 175, 116, 0.15)',
+        chipBorder: 'rgba(212, 175, 116, 0.4)',
+        chipText: '#F0DFB8',
+        accentLine: 'linear-gradient(90deg, transparent 0%, #C8A96B 50%, transparent 100%)'
+      },
+      emeraldHeritage: {
+        bg: 'linear-gradient(135deg, #0E4A35 0%, #062218 50%, #081A14 100%)',
+        border: '1.2px solid #1F6B4F',
+        brand: '#7DDEB3',
+        day: '#7DDEB3',
+        month: '#FFFFFF',
+        year: '#B8F0D4',
+        chipBg: 'rgba(125, 222, 179, 0.15)',
+        chipBorder: 'rgba(125, 222, 179, 0.4)',
+        chipText: '#FFFFFF',
+        accentLine: 'linear-gradient(90deg, transparent 0%, #7DDEB3 50%, transparent 100%)'
+      },
+      coralStudio: {
+        bg: '#FFFFFF',
+        border: '1.2px solid #E5E7EB',
+        brand: '#E57373',
+        day: '#E57373',
+        month: '#111827',
+        year: '#EF5350',
+        chipBg: 'rgba(229, 115, 115, 0.12)',
+        chipBorder: 'rgba(229, 115, 115, 0.35)',
+        chipText: '#EF5350',
+        accentLine: 'linear-gradient(90deg, transparent 0%, #EF5350 50%, transparent 100%)'
+      },
+      parchmentClassic: {
+        bg: 'linear-gradient(90deg, #F7EDD8 0%, #E8D4AE 50%, #D9C195 100%)',
+        border: '1.2px solid #C4A574',
+        brand: '#8B6914',
+        day: '#241910',
+        month: '#241910',
+        year: '#A67C52',
+        chipBg: 'rgba(139, 105, 20, 0.14)',
+        chipBorder: 'rgba(139, 105, 20, 0.4)',
+        chipText: '#241910',
+        accentLine: 'linear-gradient(90deg, transparent 0%, #8B6914 50%, transparent 100%)'
+      },
+      minimalModern: {
+        bg: 'linear-gradient(135deg, #171C24 0%, #0E1116 50%, #12151A 100%)',
+        border: '1.2px solid #2A303A',
+        brand: '#E8E6E1',
+        day: '#F4F2EE',
+        month: '#F4F2EE',
+        year: '#D0CBC2',
+        chipBg: 'rgba(232, 230, 225, 0.1)',
+        chipBorder: 'rgba(232, 230, 225, 0.3)',
+        chipText: '#F4F2EE',
+        accentLine: 'linear-gradient(90deg, transparent 0%, #D0CBC2 50%, transparent 100%)'
+      }
+    };
+
+    const themeButtons = document.querySelectorAll('.theme-btn');
+    const liveWidgetCard = document.getElementById('liveWidgetCard');
+    const wBrand = document.getElementById('wBrand');
+    const wDay = document.getElementById('wDay');
+    const wMonth = document.getElementById('wMonth');
+    const wYear = document.getElementById('wYear');
+    const wEvangelist = document.getElementById('wEvangelist');
+    const wGeez = document.getElementById('wGeez');
+    const wSaint = document.getElementById('wSaint');
+    const wSync = document.getElementById('wSync');
+    const wGreg = document.getElementById('wGreg');
+    const wWeekday = document.getElementById('wWeekday');
+    const wPrevDay = document.getElementById('wPrevDay');
+    const wNextDay = document.getElementById('wNextDay');
+
+    themeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        themeButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const theme = widgetThemes[btn.dataset.theme];
+        if (!theme || !liveWidgetCard) return;
+
+        liveWidgetCard.style.background = theme.bg;
+        liveWidgetCard.style.border = theme.border;
+        if (wBrand) wBrand.style.color = theme.brand;
+        if (wDay) wDay.style.color = theme.day;
+        if (wMonth) wMonth.style.color = theme.month;
+        if (wYear) wYear.style.color = theme.year;
+        if (wSync) wSync.style.color = theme.brand;
+        [wEvangelist, wGeez, wSaint].forEach(c => {
+          if (c) {
+            c.style.background = theme.chipBg;
+            c.style.borderColor = theme.chipBorder;
+            c.style.color = theme.chipText;
+          }
+        });
+      });
+    });
+
+    if (liveWidgetCard) {
+      liveWidgetCard.addEventListener('mousemove', (e) => {
+        const rect = liveWidgetCard.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        liveWidgetCard.style.transform = `rotateY(${x * 22}deg) rotateX(${-y * 22}deg) translateZ(10px)`;
+      });
+      liveWidgetCard.addEventListener('mouseleave', () => {
+        liveWidgetCard.style.transform = 'rotateY(0deg) rotateX(0deg) translateZ(0)';
+      });
+    }
+
+    // Widget Step Day Simulation
+    let currentWidgetDay = 14;
+    const geezNumerals = ['', '፩', '፪', '፫', '፬', '፭', '፮', '፯', '፰', '፱', '፲', '፲፩', '፲፪', '፲፫', '፲፬', '፲፭', '፲፮', '፲፯', '፲፰', '፲፱', '፳', '፳፩', '፳፪', '፳፫', '፳፬', '፳፭', '፳፮', '፳፯', '፳፰', '፳፱', '፴'];
+    const sampleSaints = [
+      '', 'ልደታ (Lideta)', 'ታዴዎስ (Thaddaeus)', 'በዓታ (Ba'eta)', 'ዮሐንስ ወልደ ነጎድጓድ', 'ጴጥሮስ ወጳውሎስ',
+      'ኢየሱስ (Iyesus)', 'ዲዮስቆሮስ', 'አባ ኪሮስ', 'ቶማስ', 'መስቀለ ክርስቶስ',
+      'ሐና ወኢያቄም', 'ሚካኤል (Michael)', 'ሩፋኤል (Raphael)', 'አባ አረጋዊ (Aba Aregawi)', 'ቂርቆስ (Qirqos)',
+      'ኪዳነ ምሕረት (Kidane Mihret)', 'እስጢፋኖስ (Stephen)', 'ተክለ አልፋ', 'ገብርኤል (Gabriel)', 'ሕንጸተ ቤተ ክርስቲያን',
+      'ማርያም (Maryam)', 'ዑራኤል (Uriel)', 'ጊዮርጊስ (George)', 'ተክለ ሃይማኖት (Tekle Haymanot)', 'መርቆሬዎስ',
+      'ቶማስ ዘደብረ ማውዕ', 'መድኃኔ ዓለም (Medhane Alem)', 'አማኑኤል (Amanuel)', 'በዓለ ወልድ', 'ማርቆስ (Mark)'
+    ];
+
+    function updateWidgetDay(day) {
+      if (day < 1) day = 30;
+      if (day > 30) day = 1;
+      currentWidgetDay = day;
+      if (wDay) wDay.textContent = day;
+      if (wGeez) wGeez.textContent = geezNumerals[day] || day;
+      if (wSaint) wSaint.textContent = sampleSaints[day] || 'ማርያም';
+      if (wGreg) wGreg.textContent = `Nov ${day + 9}, 2026 G.C.`;
+    }
+
+    if (wPrevDay) wPrevDay.addEventListener('click', () => updateWidgetDay(currentWidgetDay - 1));
+    if (wNextDay) wNextDay.addEventListener('click', () => updateWidgetDay(currentWidgetDay + 1));
+    if (wSync) wSync.addEventListener('click', () => {
+      wSync.style.transform = 'rotate(360deg)';
+      updateWidgetDay(14);
+      setTimeout(() => { wSync.style.transform = 'rotate(0deg)'; }, 400);
+    });
+
+    // ─── 8. Bidirectional Date Converter Engine (JDN Algorithm) ─
+    function ethiopicToJDN(year, month, day) {
+      return (1723856 + 365) + 365 * (year - 1) + Math.floor(year / 4) + 30 * (month - 1) + day - 1;
+    }
+
+    function jdnToGregorian(jdn) {
+      const a = jdn + 32044;
+      const b = Math.floor((4 * a + 3) / 146097);
+      const c = a - Math.floor((146097 * b) / 4);
+      const d = Math.floor((4 * c + 3) / 1461);
+      const e = c - Math.floor((1461 * d) / 4);
+      const m = Math.floor((5 * e + 2) / 153);
+      const day = e - Math.floor((153 * m + 2) / 5) + 1;
+      const month = m + 3 - 12 * Math.floor(m / 10);
+      const year = 100 * b + d - 4800 + Math.floor(m / 10);
+      return { year, month, day };
+    }
+
+    function gregorianToJDN(year, month, day) {
+      const a = Math.floor((14 - month) / 12);
+      const y = year + 4800 - a;
+      const m = month + 12 * a - 3;
+      return day + Math.floor((153 * m + 2) / 5) + 365 * y + Math.floor(y / 4) - Math.floor(y / 100) + Math.floor(y / 400) - 32045;
+    }
+
+    function jdnToEthiopic(jdn) {
+      const r = (jdn - 1723856) % 1461;
+      const n = (r % 365) + 365 * Math.floor(r / 1460);
+      const year = 4 * Math.floor((jdn - 1723856) / 1461) + Math.floor(r / 365) - Math.floor(r / 1460);
+      const month = Math.floor(n / 30) + 1;
+      const day = (n % 30) + 1;
+      return { year, month, day };
+    }
+
+    const monthNamesEn = ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const monthNamesAm = ['', 'መስከረም', 'ጥቅምት', 'ኅዳር', 'ታኅሣሥ', 'ጥር', 'የካቲት', 'መጋቢት', 'ሚያዝያ', 'ግንቦት', 'ሰኔ', 'ሐምሌ', 'ነሐሴ', 'ጳጉሜን'];
+    const weekdaysEn = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    const weekdaysAm = ['ሰኞ', 'ማክሰኞ', 'ረቡዕ', 'ሐሙስ', 'ዓርብ', 'ቅዳሜ', 'እሑድ'];
+
+    function convertEthToGreg() {
+      const day = parseInt(document.getElementById('ethDay').value) || 1;
+      const month = parseInt(document.getElementById('ethMonth').value) || 1;
+      const year = parseInt(document.getElementById('ethYear').value) || 2019;
+
+      const jdn = ethiopicToJDN(year, month, day);
+      const greg = jdnToGregorian(jdn);
+      const weekdayIdx = (jdn) % 7; // JDN 0 is Monday
+
+      const gregResult = document.getElementById('gregResult');
+      const gregWeekday = document.getElementById('gregWeekday');
+      const gregJDN = document.getElementById('gregJDN');
+
+      if (gregResult) gregResult.textContent = `${monthNamesEn[greg.month]} ${greg.day}, ${greg.year} G.C.`;
+      if (gregWeekday) gregWeekday.textContent = `${weekdaysAm[weekdayIdx]} · ${weekdaysEn[weekdayIdx]}`;
+      if (gregJDN) gregJDN.textContent = `Julian Day Number: ${jdn} · Day ${30 * (month - 1) + day} of Ethiopian Year`;
+    }
+
+    function convertGregToEth() {
+      const day = parseInt(document.getElementById('gregDayInput').value) || 1;
+      const month = parseInt(document.getElementById('gregMonthInput').value) || 1;
+      const year = parseInt(document.getElementById('gregYearInput').value) || 2026;
+
+      const jdn = gregorianToJDN(year, month, day);
+      const eth = jdnToEthiopic(jdn);
+
+      const evangelists = ['ዘመነ ዮሐንስ (John)', 'ዘመነ ማቴዎስ (Matthew)', 'ዘመነ ማርቆስ (Mark)', 'ዘመነ ሉቃስ (Luke)'];
+      const evang = evangelists[eth.year % 4];
+
+      const ethResult = document.getElementById('ethResult');
+      const ethResultGeez = document.getElementById('ethResultGeez');
+      const ethResultSaint = document.getElementById('ethResultSaint');
+
+      if (ethResult) ethResult.textContent = `${monthNamesAm[eth.month]} ${eth.day}, ${eth.year} ዓ.ም`;
+      if (ethResultGeez) ethResultGeez.textContent = `${monthNamesAm[eth.month]} ${geezNumerals[eth.day] || eth.day} · ${evang}`;
+      if (ethResultSaint) ethResultSaint.textContent = `Daily Saint: ${sampleSaints[eth.day] || 'ማርያም'}`;
+    }
+
+    ['ethDay', 'ethMonth', 'ethYear'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener('input', convertEthToGreg);
+    });
+
+    ['gregDayInput', 'gregMonthInput', 'gregYearInput'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener('input', convertGregToEth);
+    });
+
+    convertEthToGreg();
+    convertGregToEth();
+
+    // ─── 9. Bahire Hasab Computus Calculator ───────────────────
+    const computusYearInput = document.getElementById('computusYearInput');
+    const valAmeteAlem = document.getElementById('valAmeteAlem');
+    const valWenber = document.getElementById('valWenber');
+    const valAbaqte = document.getElementById('valAbaqte');
+    const valMetqi = document.getElementById('valMetqi');
+    const computusEvangelistText = document.getElementById('computusEvangelistText');
+
+    function calculateBahireHasab() {
+      const year = parseInt(computusYearInput.value) || 2019;
+      const ameteAlem = 5500 + year;
+      const wenber = (ameteAlem - 1) % 19;
+      const abaqte = (wenber * 11) % 30;
+      const metqi = (30 - abaqte) % 30;
+
+      const evangelists = ['ዘመነ ዮሐንስ (John)', 'ዘመነ ማቴዎስ (Matthew)', 'ዘመነ ማርቆስ (Mark)', 'ዘመነ ሉቃስ (Luke)'];
+      const evang = evangelists[year % 4];
+
+      if (valAmeteAlem) valAmeteAlem.textContent = ameteAlem;
+      if (valWenber) valWenber.textContent = wenber;
+      if (valAbaqte) valAbaqte.textContent = abaqte;
+      if (valMetqi) valMetqi.textContent = metqi;
+      if (computusEvangelistText) computusEvangelistText.textContent = evang;
+    }
+
+    if (computusYearInput) computusYearInput.addEventListener('input', calculateBahireHasab);
+    calculateBahireHasab();
+
+    // ─── 10. 30 Commemorated Saints Directory ──────────────────
+    const saintsData = [
+      { day: 1, am: "ልደታ ለማርያም", en: "Nativity of St. Mary / Lideta" },
+      { day: 2, am: "ታዴዎስ ሐዋርያ", en: "St. Thaddaeus Apostle" },
+      { day: 3, am: "በዓታ ለማርያም", en: "Ba'eta (Presentation of Mary)" },
+      { day: 4, am: "ዮሐንስ ወልደ ነጎድጓድ", en: "St. John Son of Thunder" },
+      { day: 5, am: "ጴጥሮስ ወጳውሎስ", en: "St. Peter and St. Paul" },
+      { day: 6, am: "ኢየሱስ (ቁስቋም)", en: "Jesus Christ / Qusqwam" },
+      { day: 7, am: "አባ ጊዮርጊስ ዘጋስጫ", en: "Abba George of Gasecha" },
+      { day: 8, am: "አባ ኪሮስ", en: "Abba Kiros" },
+      { day: 9, am: "ቶማስ ሐዋርያ", en: "St. Thomas Apostle" },
+      { day: 10, am: "መስቀለ ክርስቶስ", en: "Holy Cross of Christ" },
+      { day: 11, am: "ሐና ወኢያቄም", en: "St. Hanna and St. Joachim" },
+      { day: 12, am: "ቅዱስ ሚካኤል ሊቀ መላእክት", en: "Archangel Michael" },
+      { day: 13, am: "ቅዱስ ሩፋኤል ሊቀ መላእክት", en: "Archangel Raphael" },
+      { day: 14, am: "አባ አረጋዊ (ዘደብረ ዳሞ)", en: "Abba Aregawi of Debre Damo" },
+      { day: 15, am: "ቅዱስ ቂርቆስና ኢየሉጣ", en: "St. Qirqos and Julitta" },
+      { day: 16, am: "ኪዳነ ምሕረት", en: "Kidane Mihret (Covenant of Mercy)" },
+      { day: 17, am: "ቅዱስ እስጢፋኖስ", en: "St. Stephen the Protomartyr" },
+      { day: 18, am: "ተክለ አልፋ", en: "Tekle Alfa" },
+      { day: 19, am: "ቅዱስ ገብርኤል ሊቀ መላእክት", en: "Archangel Gabriel" },
+      { day: 20, am: "ሕንጸተ ቤተ ክርስቲያን", en: "Consecration of St. Mary Church" },
+      { day: 21, am: "እግዝእትነ ማርያም", en: "Holy Virgin Mary (Maryam)" },
+      { day: 22, am: "ቅዱስ ዑራኤል ሊቀ መላእክት", en: "Archangel Uriel" },
+      { day: 23, am: "ቅዱስ ጊዮርጊስ ሰማዕት", en: "St. George the Martyr" },
+      { day: 24, am: "አቡነ ተክለ ሃይማኖት", en: "Abune Tekle Haymanot" },
+      { day: 25, am: "ቅዱስ መርቆሬዎስ", en: "St. Mercurius the Martyr" },
+      { day: 26, am: "ቶማስ ዘደብረ ማውዕ", en: "Thomas of Debre Maw'i" },
+      { day: 27, am: "መድኃኔ ዓለም", en: "Medhane Alem (Savior of the World)" },
+      { day: 28, am: "አማኑኤል", en: "Emmanuel" },
+      { day: 29, am: "በዓለ ወልድ", en: "Feast of the Son (Bale Wold)" },
+      { day: 30, am: "ቅዱስ ማርቆስ ዘአንበሳ", en: "St. Mark the Evangelist" }
+    ];
+
+    const saintsGrid = document.getElementById('saintsGrid');
+    const saintsSearchInput = document.getElementById('saintsSearchInput');
+
+    function renderSaints(filterText = '') {
+      if (!saintsGrid) return;
+      saintsGrid.innerHTML = '';
+      const query = filterText.toLowerCase().trim();
+
+      const filtered = saintsData.filter(s =>
+        s.am.toLowerCase().includes(query) ||
+        s.en.toLowerCase().includes(query) ||
+        s.day.toString().includes(query)
+      );
+
+      if (filtered.length === 0) {
+        saintsGrid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; color: var(--text-dim); padding: 24px;">No commemorative saints found matching "${filterText}".</div>`;
+        return;
+      }
+
+      filtered.forEach(s => {
+        const cell = document.createElement('div');
+        cell.className = 'saint-cell';
+        cell.innerHTML = `
+          <div class="saint-day-num">${geezNumerals[s.day] || s.day}</div>
+          <div class="saint-name-col">
+            <span class="saint-name-ethiopic">${s.am}</span>
+            <span class="saint-name-en">Day ${s.day} · ${s.en}</span>
+          </div>
+        `;
+        cell.addEventListener('click', () => {
+          updateWidgetDay(s.day);
+          window.location.hash = '#widgets';
+        });
+        saintsGrid.appendChild(cell);
+      });
+    }
+
+    if (saintsSearchInput) {
+      saintsSearchInput.addEventListener('input', (e) => {
+        renderSaints(e.target.value);
+      });
+    }
+
+    renderSaints();
+
+    // ─── 11. Mobile Drawer Navigation ──────────────────────────
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    if (mobileMenuBtn && mobileDrawer) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileDrawer.classList.toggle('open');
+      });
+      document.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileDrawer.classList.remove('open');
+        });
+      });
+    }
+
+    // ─── 12. Floating Back to Top Button ───────────────────────
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        if (backToTop) backToTop.classList.add('show');
+      } else {
+        if (backToTop) backToTop.classList.remove('show');
+      }
+    });
+
+    if (backToTop) {
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    // ─── 13. Ambient Cultural Floating Particles (Canvas) ──────
+    const canvas = document.getElementById('ambient-canvas');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      let width = (canvas.width = window.innerWidth);
+      let height = (canvas.height = window.innerHeight);
+
+      window.addEventListener('resize', () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      });
+
+      const symbols = ['፩', '፪', '፫', '፬', '፭', '፮', '፯', '፰', '፱', '፲', '፳', '✦', '☩', '·'];
+      const particles = Array.from({ length: 36 }, () => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        char: symbols[Math.floor(Math.random() * symbols.length)],
+        size: Math.random() * 14 + 10,
+        speedX: (Math.random() - 0.5) * 0.35,
+        speedY: (Math.random() - 0.5) * 0.3 - 0.15,
+        opacity: Math.random() * 0.32 + 0.08
+      }));
+
+      function renderParticles() {
+        ctx.clearRect(0, 0, width, height);
+        ctx.font = '14px "Noto Sans Ethiopic", sans-serif';
+
+        for (const p of particles) {
+          p.x += p.speedX;
+          p.y += p.speedY;
+          if (p.x < 0) p.x = width;
+          if (p.x > width) p.x = 0;
+          if (p.y < 0) p.y = height;
+          if (p.y > height) p.y = 0;
+
+          ctx.fillStyle = `rgba(212, 175, 116, ${p.opacity})`;
+          ctx.fillText(p.char, p.x, p.y);
+        }
+        requestAnimationFrame(renderParticles);
+      }
+      renderParticles();
+    }
+  </script>
 </body>
 </html>
