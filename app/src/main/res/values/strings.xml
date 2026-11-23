@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">EthioCal Pro</string>
+    <string name="widget_full_label">EthioCal Dual Date (Full)</string>
+    <string name="widget_full_description">Displays today\'s current date in both Ethiopian and Gregorian calendars, Ge\'ez numeral, Ethiopian 12-hour clock, fasting status, and upcoming holidays.</string>
+    <string name="widget_compact_label">EthioCal Dual Date (Compact)</string>
+    <string name="widget_compact_description">Compact home screen widget displaying today\'s current date in both Ethiopian and Gregorian calendar formats.</string>
+</resources>

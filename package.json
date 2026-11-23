@@ -1,0 +1,12 @@
+{
+  "name": "ethiocal-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Root runner for Zemen Ethiopian Calendar project tools & workers",
+  "scripts": {
+    "dev": "npm --prefix workers/football-proxy run dev",
+    "deploy": "npm --prefix workers/football-proxy run deploy",
+    "check": "npm --prefix workers/football-proxy run check",
+    "build": "npm --prefix workers/football-proxy run check"
+  }
+}

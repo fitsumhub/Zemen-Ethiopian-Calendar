@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "schema": "historical_event_v1",
+  "source_ids": ["public_historical_anchors"],
+  "verification": "verified",
+  "date_kind": "fixed_historical_pair",
+  "events": [
+    {"id": "adwa_1896", "title_en": "Battle of Adwa", "ethiopian": [1888, 6, 23], "gregorian": [1896, 3, 1], "weekday": "Sunday"},
+    {"id": "liberation_addis_1941", "title_en": "Liberation of Addis Ababa", "ethiopian": [1933, 8, 27], "gregorian": [1941, 5, 5]},
+    {"id": "deposition_1974", "title_en": "Deposition of Haile Selassie", "ethiopian": [1967, 1, 2], "gregorian": [1974, 9, 12]},
+    {"id": "ginbot20_1991", "title_en": "Fall of the Derg", "ethiopian": [1983, 9, 20], "gregorian": [1991, 5, 28]},
+    {"id": "millennium_2000", "title_en": "Ethiopian Millennium", "ethiopian": [2000, 1, 1], "gregorian": [2007, 9, 12], "weekday": "Wednesday"},
+    {"id": "pagume6_2015", "title_en": "Pagume 6 leap boundary", "ethiopian": [2015, 13, 6], "gregorian": [2023, 9, 11], "notes": "Luke year Pagume has 6 days"},
+    {"id": "new_year_2016", "title_en": "New Year after leap Pagume", "ethiopian": [2016, 1, 1], "gregorian": [2023, 9, 12]},
+    {"id": "genna_2015", "title_en": "Genna (Tahsas 29)", "ethiopian": [2015, 4, 29], "gregorian": [2023, 1, 7]},
+    {"id": "genna_2016_john", "title_en": "Genna in year of John (Tahsas 28)", "ethiopian": [2016, 4, 28], "gregorian": [2024, 1, 7], "notes": "year % 4 == 0 → day 28"},
+    {"id": "timket_2016", "title_en": "Timket Tir 11", "ethiopian": [2016, 5, 11], "gregorian": [2024, 1, 20]}
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0",
+  "schema": "ethiopian_weekday_v1",
+  "source_ids": ["ethiocal_engine"],
+  "verification": "verified",
+  "numbering": "1=Monday … 7=Sunday (ISO-aligned engine convention)",
+  "weekdays": [
+    {"number": 1, "amharic": "ሰኞ", "english": "Monday", "oromo": "Wiixata", "tigrinya": "ሰኑይ"},
+    {"number": 2, "amharic": "ማክሰኞ", "english": "Tuesday", "oromo": "Kibxata", "tigrinya": "ሰሉስ"},
+    {"number": 3, "amharic": "ረቡዕ", "english": "Wednesday", "oromo": "Roobii", "tigrinya": "ረቡዕ"},
+    {"number": 4, "amharic": "ሐሙስ", "english": "Thursday", "oromo": "Kamiisa", "tigrinya": "ሓሙስ"},
+    {"number": 5, "amharic": "ዓርብ", "english": "Friday", "oromo": "Jimaata", "tigrinya": "ዓርቢ"},
+    {"number": 6, "amharic": "ቅዳሜ", "english": "Saturday", "oromo": "Sanbata", "tigrinya": "ቀዳም"},
+    {"number": 7, "amharic": "እሑድ", "english": "Sunday", "oromo": "Dilbata", "tigrinya": "ሰንበት"}
+  ]
+}

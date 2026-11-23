@@ -1,0 +1,113 @@
+{
+  "version": "1.0.0",
+  "schema": "fixed_ethiopian_holiday_v1",
+  "source_ids": ["ethiocal_engine", "kenat", "eotc_conformance", "public_historical_anchors"],
+  "verification": "verified",
+  "date_kind": "fixed_ethiopian",
+  "holidays": [
+    {
+      "id": "enkutatash",
+      "month": 1,
+      "day": 1,
+      "title_am": "እንቁጣጣሽ",
+      "title_en": "Enkutatash (Ethiopian New Year)",
+      "tags": ["national", "public", "cultural"],
+      "public_holiday": true
+    },
+    {
+      "id": "meskel",
+      "month": 1,
+      "day": 17,
+      "title_am": "መስቀል",
+      "title_en": "Meskel (Finding of the True Cross)",
+      "tags": ["national", "public", "orthodox", "unesco"],
+      "public_holiday": true
+    },
+    {
+      "id": "nations_nationalities",
+      "month": 3,
+      "day": 29,
+      "title_am": "የብሔር ብሔረሰቦች ቀን",
+      "title_en": "Nations, Nationalities and Peoples' Day",
+      "tags": ["national", "public", "state"],
+      "public_holiday": true,
+      "source_ids": ["kenat"]
+    },
+    {
+      "id": "genna",
+      "month": 4,
+      "day_rule": "year % 4 == 0 ? 28 : 29",
+      "title_am": "ገና",
+      "title_en": "Genna (Ethiopian Christmas)",
+      "tags": ["national", "public", "orthodox"],
+      "public_holiday": true,
+      "notes": "Always lands on 7 January Gregorian in 1901–2099. Kenat hardcodes day 29 — EthioCal rule is preferred and verified."
+    },
+    {
+      "id": "timket",
+      "month": 5,
+      "day": 11,
+      "title_am": "ጥምቀት",
+      "title_en": "Timket (Epiphany)",
+      "tags": ["national", "public", "orthodox", "unesco"],
+      "public_holiday": true
+    },
+    {
+      "id": "kana_zegelila",
+      "month": 5,
+      "day": 12,
+      "title_am": "ቃና ዘገሊላ",
+      "title_en": "Kana ZeGelila (Wedding of Cana)",
+      "tags": ["orthodox"],
+      "public_holiday": false
+    },
+    {
+      "id": "martyrs_day",
+      "month": 6,
+      "day": 12,
+      "title_am": "የሰማዕታት ቀን",
+      "title_en": "Martyrs' Day (Red Terror remembrance)",
+      "tags": ["national", "public", "state"],
+      "public_holiday": true,
+      "source_ids": ["kenat"]
+    },
+    {
+      "id": "adwa",
+      "month": 6,
+      "day": 23,
+      "title_am": "የዓድዋ ድል በዓል",
+      "title_en": "Victory of Adwa",
+      "tags": ["national", "public", "historical"],
+      "public_holiday": true
+    },
+    {
+      "id": "labour_day",
+      "month": 8,
+      "day": 23,
+      "title_am": "የሰራተኞች ቀን",
+      "title_en": "International Labour Day",
+      "tags": ["national", "public", "state"],
+      "public_holiday": true,
+      "source_ids": ["kenat"],
+      "notes": "Corresponds to 1 May Gregorian in the modern alignment."
+    },
+    {
+      "id": "patriots_day",
+      "month": 8,
+      "day": 27,
+      "title_am": "የአርበኞች ቀን",
+      "title_en": "Ethiopian Patriots' Victory Day",
+      "tags": ["national", "public", "historical"],
+      "public_holiday": true
+    },
+    {
+      "id": "ginbot_20",
+      "month": 9,
+      "day": 20,
+      "title_am": "ግንቦት 20",
+      "title_en": "Ginbot 20 (Downfall of Derg)",
+      "tags": ["national", "public", "historical"],
+      "public_holiday": true
+    }
+  ]
+}

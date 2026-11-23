@@ -1,0 +1,11 @@
+name = "zemen-football-proxy"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+
+[vars]
+# Public TheSportsDB free key (same as mobile client). Override in dashboard if needed.
+SPORTSDB_API_KEY = "123"
+
+# Allow local Flutter web + production hosts during development.
+# Tighten in production to your real web origin(s).
+ALLOWED_ORIGINS = "*"

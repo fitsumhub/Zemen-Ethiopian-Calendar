@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Zemen: Ethiopian Calendar</string>
+    <string name="app_name_am">ዘመን፡ የኢትዮጵያ ቀን መቁጠሪያ</string>
+    <string name="app_tagline">Your Time. Your Tradition. Your Calendar.</string>
+    <string name="widget_home_description">Ethiopian date with Gregorian reference — clean and glanceable</string>
+    <string name="widget_home_label">Zemen Calendar</string>
+    <string name="widget_refresh">Refresh widget</string>
+</resources>

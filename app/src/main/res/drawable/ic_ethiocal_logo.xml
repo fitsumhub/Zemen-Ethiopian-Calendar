@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+
+    <!-- Glowing Background Circle -->
+    <path
+        android:pathData="M60,6 A54,54 0 1,1 59.9,6 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:angle="135"
+                android:startColor="#06221A"
+                android:centerColor="#0B1526"
+                android:endColor="#060C16"
+                android:type="linear" />
+        </aapt:attr>
+    </path>
+
+    <!-- Outer Gold Rim -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#F59E0B"
+        android:strokeWidth="2.5"
+        android:pathData="M60,8 A52,52 0 1,1 59.9,8 Z" />
+
+    <!-- Celestial Rings -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#33EAB308"
+        android:strokeWidth="1.2"
+        android:pathData="M60,15 A45,45 0 1,1 59.9,15 Z" />
+
+    <!-- 13 Months of Sunshine Radiant Rays -->
+    <path
+        android:strokeColor="#F59E0B"
+        android:strokeWidth="2.2"
+        android:strokeLineCap="round"
+        android:pathData="M60,18 L60,24 M79,23 L75,28 M95,35 L90,39 M102,52 L96,53 M99,71 L94,69 M86,86 L82,82 M69,98 L67,92 M51,98 L53,92 M34,86 L38,82 M21,71 L26,69 M18,52 L24,53 M25,35 L30,39 M41,23 L45,28" />
+
+    <!-- Calendar Slate Tile -->
+    <path
+        android:fillColor="#151E2E"
+        android:strokeColor="#FBBF24"
+        android:strokeWidth="2.5"
+        android:pathData="M37,33 h46 a5,5 0 0,1 5,5 v44 a5,5 0 0,1 -5,5 h-46 a5,5 0 0,1 -5,-5 v-44 a5,5 0 0,1 5,-5 Z" />
+
+    <!-- Ethiopian Tricolor Header Ribbon -->
+    <path
+        android:fillColor="#10B981"
+        android:pathData="M38,35 h14 v8 h-14 a2,2 0 0,1 -2,-2 v-4 a2,2 0 0,1 2,-2 Z" />
+    <path
+        android:fillColor="#FBBF24"
+        android:pathData="M52,35 h16 v8 h-16 Z" />
+    <path
+        android:fillColor="#EF4444"
+        android:pathData="M68,35 h14 a2,2 0 0,1 2,2 v4 a2,2 0 0,1 -2,2 h-14 Z" />
+
+    <!-- Binder Loops -->
+    <path
+        android:fillColor="#FEF08A"
+        android:strokeColor="#B45309"
+        android:strokeWidth="1.0"
+        android:pathData="M44,29 h6 v7 h-6 Z" />
+    <path
+        android:fillColor="#FEF08A"
+        android:strokeColor="#B45309"
+        android:strokeWidth="1.0"
+        android:pathData="M70,29 h6 v7 h-6 Z" />
+
+    <!-- Central Meskel Solar Medallion -->
+    <path
+        android:fillColor="#1E293B"
+        android:strokeColor="#EAB308"
+        android:strokeWidth="1.5"
+        android:pathData="M60,51 A15,15 0 1,1 59.9,51 Z" />
+
+    <!-- Meskel Cross Filigree -->
+    <path
+        android:fillColor="#FBBF24"
+        android:pathData="M58,53 h4 v24 h-4 Z" />
+    <path
+        android:fillColor="#FBBF24"
+        android:pathData="M48,63 h24 v4 h-24 Z" />
+
+    <!-- Finials -->
+    <path
+        android:fillColor="#FDE047"
+        android:pathData="M56,53 h8 v-3 h-8 Z M56,77 h8 v3 h-8 Z M48,61 h-3 v8 h3 Z M72,61 h3 v8 h-3 Z" />
+
+    <!-- White Diamond Center -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M60,61 L64,65 L60,69 L56,65 Z" />
+</vector>

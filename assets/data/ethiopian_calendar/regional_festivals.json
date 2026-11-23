@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "schema": "regional_festival_v1",
+  "source_ids": ["ethiocal_engine"],
+  "verification": "cross_checked",
+  "festivals": [
+    {
+      "id": "irreecha",
+      "title_en": "Irreecha",
+      "title_am": "ኢሬቻ",
+      "culture": "Oromo",
+      "date_kind": "approximate_rule",
+      "rule": "First Sunday after Meskel (Meskerem 17)",
+      "notes": "Regional thanksgiving; exact civic observance can vary by locality and year. EthioCal uses first Sunday after Meskel as a calendar marker, not an official gazette date."
+    },
+    {
+      "id": "ashenda",
+      "title_en": "Ashenda / Shigiyye",
+      "title_am": "አሸንዳ",
+      "culture": "Tigray / Northern",
+      "date_kind": "approximate_fixed_window",
+      "month": 12,
+      "day_start": 16,
+      "notes": "Cultural festival around mid-Nehase; local calendars vary. Marked approximate."
+    }
+  ]
+}

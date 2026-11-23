@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0",
+  "schema": "national_holiday_index_v1",
+  "source_ids": ["ethiocal_engine", "kenat", "public_historical_anchors"],
+  "verification": "verified",
+  "notes": "Subset of fixed_holidays.json with public_holiday=true. Movable public days (Fasika, Siklet) come from Bahire Hasab.",
+  "ids": [
+    "enkutatash",
+    "meskel",
+    "nations_nationalities",
+    "genna",
+    "timket",
+    "martyrs_day",
+    "adwa",
+    "labour_day",
+    "patriots_day",
+    "ginbot_20"
+  ],
+  "movable_public": ["siklet", "fasika"]
+}

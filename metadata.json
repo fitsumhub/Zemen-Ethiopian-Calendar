@@ -1,0 +1,6 @@
+{
+  "name": "EthioCal Pro",
+  "description": "Complete Ethiopian Calendar, Gregorian date converter, Bahire Hasab, Orthodox and Islamic holidays, and event reminder planner",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

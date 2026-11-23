@@ -1,0 +1,68 @@
+{
+  "version": "1.0.0",
+  "schema": "fasting_period_v1",
+  "source_ids": ["ethiocal_engine", "kenat", "eotc_conformance", "yinebebt_ethiocal"],
+  "verification": "verified",
+  "date_kind": "mixed",
+  "periods": [
+    {
+      "id": "tsome_nebiyat",
+      "title_en": "Fast of the Prophets (Advent)",
+      "title_am": "ጾመ ነቢያት",
+      "kind": "fixed_start_until_feast",
+      "start": {"month": 3, "day": 15},
+      "ends_before": "genna",
+      "date_kind": "fixed_ethiopian"
+    },
+    {
+      "id": "gahad_gena",
+      "title_en": "Christmas Eve fast (Gahad)",
+      "kind": "eve_of_feast",
+      "feast": "genna",
+      "date_kind": "calculated_from_fixed_rule"
+    },
+    {
+      "id": "gahad_timket",
+      "title_en": "Epiphany Eve fast (Gahad)",
+      "kind": "fixed",
+      "start": {"month": 5, "day": 10},
+      "date_kind": "fixed_ethiopian"
+    },
+    {
+      "id": "tsome_nenewe",
+      "title_en": "Fast of Nineveh",
+      "kind": "bahire_hasab",
+      "duration_days": 3,
+      "date_kind": "calculated_bahire_hasab"
+    },
+    {
+      "id": "abiy_tsom",
+      "title_en": "Great Lent (Hudade)",
+      "kind": "bahire_hasab",
+      "date_kind": "calculated_bahire_hasab"
+    },
+    {
+      "id": "tsome_hawaryat",
+      "title_en": "Apostles' Fast",
+      "kind": "bahire_hasab",
+      "date_kind": "calculated_bahire_hasab"
+    },
+    {
+      "id": "tsome_filseta",
+      "title_en": "Fast of the Assumption (Filseta)",
+      "kind": "fixed",
+      "start": {"month": 12, "day": 1},
+      "end": {"month": 12, "day": 15},
+      "date_kind": "fixed_ethiopian"
+    },
+    {
+      "id": "wednesday_friday",
+      "title_en": "Weekly Wednesday & Friday fasts",
+      "kind": "weekly",
+      "days_of_week": [3, 5],
+      "exceptions": ["feast_overrides", "fifty_days_of_joy"],
+      "date_kind": "rule_based"
+    }
+  ],
+  "implementation": "lib/core/holidays/holiday_engine.dart#isFastingDay"
+}

@@ -1,0 +1,106 @@
+{
+  "version": "1.0.0",
+  "generated": "2026-11-15",
+  "project": "EthioCal Pro",
+  "policy": "Research first, verify second, integrate third. Approximate data is never mixed into verified layers without status tags.",
+  "sources": [
+    {
+      "id": "ethiocal_engine",
+      "name": "EthioCal Pro in-repo JDN engine",
+      "url": "lib/core/calendar/",
+      "license": "Project source",
+      "role": "Primary offline conversion, leap, Pagume, weekday, Bahire Hasab, Geez, Ethiopian time",
+      "verification": "verified"
+    },
+    {
+      "id": "eotc_conformance",
+      "name": "natinael96/EOTCDevAPI conformance suite",
+      "url": "https://github.com/natinael96/EOTCDevAPI",
+      "license": "MIT (code); data/sinq-gitsawe MIT lineage; data/sinksar Apache-2.0 — see NOTICE",
+      "role": "Independent conversion/Bahire/fast/Geez oracle (4936 conversion cases matched)",
+      "verification": "verified"
+    },
+    {
+      "id": "kenat",
+      "name": "MelakuDemeke/kenat",
+      "url": "https://github.com/MelakuDemeke/kenat",
+      "license": "MIT",
+      "role": "Holiday/fasting taxonomy reference; algorithm oracle (not Dart dependency)",
+      "verification": "cross_checked",
+      "limitations": "Issue #39 historical toGC drift outside ~1892–2091 EC; Genna hardcoded to Tahsas 29"
+    },
+    {
+      "id": "kenat_py",
+      "name": "MelakuDemeke/kenat_py",
+      "url": "https://github.com/MelakuDemeke/kenat_py",
+      "license": "MIT",
+      "role": "Python port of kenat for cross-language checks",
+      "verification": "cross_checked"
+    },
+    {
+      "id": "abushakir",
+      "name": "Nabute/Abushakir",
+      "url": "https://github.com/Nabute/Abushakir",
+      "license": "MIT",
+      "role": "Dart RD-style conversion + Bahire Hasab reference",
+      "verification": "reviewed",
+      "limitations": "pubspec sdk <3.0.0 blocks modern Flutter without fork"
+    },
+    {
+      "id": "yinebebt_ethiocal",
+      "name": "yinebebt/ethiocal",
+      "url": "https://github.com/yinebebt/ethiocal",
+      "license": "MIT",
+      "role": "Go Bahire Hasab offset table cross-check",
+      "verification": "cross_checked"
+    },
+    {
+      "id": "mukerem_ethiocalendar",
+      "name": "mukerem/ethiocalendar",
+      "url": "https://github.com/mukerem/ethiocalendar",
+      "license": "MIT",
+      "role": "ICU/Beyene–Kudlek ordinal conversion reference",
+      "verification": "reviewed"
+    },
+    {
+      "id": "ethiopic_primitives",
+      "name": "Yaredt/ethiopic-primitives",
+      "url": "https://github.com/Yaredt/ethiopic-primitives",
+      "license": "MIT",
+      "role": "Confirms ethiopicEpochJdn = 1724221",
+      "verification": "verified"
+    },
+    {
+      "id": "tadesse_bahire",
+      "name": "TadesseAngaw/bahire-hasab",
+      "url": "https://github.com/TadesseAngaw/bahire-hasab",
+      "license": "No SPDX; redistribute without modification",
+      "role": "Algorithm reading only — not vendored",
+      "verification": "reviewed_not_copied"
+    },
+    {
+      "id": "dakidarts_api",
+      "name": "dakidarts/ethiopian-calendar-api",
+      "url": "https://github.com/dakidarts/ethiopian-calendar-api",
+      "license": "MIT (repo LICENSE); product is RapidAPI",
+      "role": "Not used offline — API-only",
+      "verification": "excluded_from_offline_core"
+    },
+    {
+      "id": "public_historical_anchors",
+      "name": "Public historical date pairs",
+      "url": "test/engine_verification_test.dart",
+      "license": "Public record",
+      "role": "Adwa, Liberation, Derg fall, Millennium, Genna/Timket anchors",
+      "verification": "verified"
+    },
+    {
+      "id": "meeus_julian_easter",
+      "name": "Meeus Julian computus Easter",
+      "url": "test/engine_verification_test.dart",
+      "license": "Public algorithm",
+      "role": "Independent Bahire Hasab / Fasika cross-check 1900–2100",
+      "verification": "verified"
+    }
+  ]
+}

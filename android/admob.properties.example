@@ -1,0 +1,17 @@
+# Copy to admob.properties (gitignored) and fill real IDs from https://apps.admob.com
+# Until filled, release builds stay ad-free (policy-safe).
+
+# Android App ID (also injected into AndroidManifest)
+admobAppId=ca-app-pub-XXXXXXXXXXXXXXXX~XXXXXXXXXX
+
+# Android ad unit IDs
+androidBanner=ca-app-pub-XXXXXXXXXXXXXXXX/XXXXXXXXXX
+androidInterstitial=ca-app-pub-XXXXXXXXXXXXXXXX/XXXXXXXXXX
+androidAppOpen=ca-app-pub-XXXXXXXXXXXXXXXX/XXXXXXXXXX
+androidNative=ca-app-pub-XXXXXXXXXXXXXXXX/XXXXXXXXXX
+
+# iOS ad unit IDs (optional until iOS release)
+iosBanner=ca-app-pub-XXXXXXXXXXXXXXXX/XXXXXXXXXX
+iosInterstitial=ca-app-pub-XXXXXXXXXXXXXXXX/XXXXXXXXXX
+iosAppOpen=ca-app-pub-XXXXXXXXXXXXXXXX/XXXXXXXXXX
+iosNative=ca-app-pub-XXXXXXXXXXXXXXXX/XXXXXXXXXX

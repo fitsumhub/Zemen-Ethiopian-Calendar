@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "schema": "geez_numeral_v1",
+  "source_ids": ["ethiocal_engine", "eotc_conformance", "kenat"],
+  "verification": "verified",
+  "notes": "EthioCal GeezNumeral matches EOTC conformance for 3006/3007 cases. Single mismatch at n=353319553 (multi-፼ stacking) — outside calendar year range.",
+  "glyphs": {
+    "ones": ["", "፩", "፪", "፫", "፬", "፭", "፮", "፯", "፰", "፱"],
+    "tens": ["", "፲", "፳", "፴", "፵", "፶", "፷", "፸", "፹", "፺"],
+    "hundred": "፻",
+    "ten_thousand": "፼"
+  },
+  "examples": [
+    {"n": 1, "geez": "፩"},
+    {"n": 10, "geez": "፲"},
+    {"n": 15, "geez": "፲፭"},
+    {"n": 100, "geez": "፻"},
+    {"n": 2017, "geez": "፳፻፲፯"},
+    {"n": 10000, "geez": "፼"}
+  ]
+}

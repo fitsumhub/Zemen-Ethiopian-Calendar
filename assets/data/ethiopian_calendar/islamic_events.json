@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "schema": "islamic_observance_v1",
+  "source_ids": ["ethiocal_engine", "kenat"],
+  "verification": "approximate_calculated",
+  "date_kind": "calculated_hijri_to_ethiopian",
+  "notes": "Islamic dates depend on lunar sighting. EthioCal uses algorithmic Hijri→JDN conversion for planning; status is approximate_calculated / officially_announced when civic calendars publish dates.",
+  "events": [
+    {"id": "mawlid", "hijri_month": 3, "hijri_day": 12, "title_en": "Mawlid (Prophet's Birthday)", "public_holiday_ethiopia": true},
+    {"id": "ramadan_start", "hijri_month": 9, "hijri_day": 1, "title_en": "Start of Ramadan", "public_holiday_ethiopia": false},
+    {"id": "eid_al_fitr", "hijri_month": 10, "hijri_day": 1, "title_en": "Eid al-Fitr", "public_holiday_ethiopia": true},
+    {"id": "eid_al_adha", "hijri_month": 12, "hijri_day": 10, "title_en": "Eid al-Adha / Arafa", "public_holiday_ethiopia": true}
+  ],
+  "implementation": "lib/core/holidays/holiday_engine.dart#_hijriToJdn"
+}

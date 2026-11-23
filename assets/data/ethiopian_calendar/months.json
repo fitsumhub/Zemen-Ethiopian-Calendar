@@ -1,0 +1,22 @@
+{
+  "version": "1.0.0",
+  "schema": "ethiopian_month_v1",
+  "source_ids": ["ethiocal_engine", "kenat", "eotc_conformance"],
+  "verification": "verified",
+  "notes": "Months 1–12 always have 30 days. Month 13 (Pagume) has 5 days, or 6 in leap years (year % 4 == 3).",
+  "months": [
+    {"number": 1, "amharic": "መስከረም", "english": "Meskerem", "oromo": "Fulbaana", "tigrinya": "መስከረም", "days": 30},
+    {"number": 2, "amharic": "ጥቅምት", "english": "Tikimt", "oromo": "Onkololeessa", "tigrinya": "ጥቅምቲ", "days": 30},
+    {"number": 3, "amharic": "ኅዳር", "english": "Hidar", "oromo": "Sadaasa", "tigrinya": "ሕዳር", "days": 30},
+    {"number": 4, "amharic": "ታኅሣሥ", "english": "Tahsas", "oromo": "Muddee", "tigrinya": "ታሕሳስ", "days": 30},
+    {"number": 5, "amharic": "ጥር", "english": "Tir", "oromo": "Amajjii", "tigrinya": "ጥሪ", "days": 30},
+    {"number": 6, "amharic": "የካቲት", "english": "Yakatit", "oromo": "Guraandhala", "tigrinya": "የካቲት", "days": 30},
+    {"number": 7, "amharic": "መጋቢት", "english": "Megabit", "oromo": "Bitooteessa", "tigrinya": "መጋቢት", "days": 30},
+    {"number": 8, "amharic": "ሚያዝያ", "english": "Miazia", "oromo": "Ebla", "tigrinya": "ሚያዝያ", "days": 30},
+    {"number": 9, "amharic": "ግንቦት", "english": "Ginbot", "oromo": "Caamsaa", "tigrinya": "ግንቦት", "days": 30},
+    {"number": 10, "amharic": "ሰኔ", "english": "Sene", "oromo": "Waxabajjii", "tigrinya": "ሰነ", "days": 30},
+    {"number": 11, "amharic": "ሐምሌ", "english": "Hamle", "oromo": "Adooleessa", "tigrinya": "ሓምለ", "days": 30},
+    {"number": 12, "amharic": "ነሐሴ", "english": "Nehase", "oromo": "Hagayya", "tigrinya": "ነሓሰ", "days": 30},
+    {"number": 13, "amharic": "ጳጉሜ", "english": "Pagume", "oromo": "Qaammee", "tigrinya": "ጳጉሜን", "days": "5_or_6_leap"}
+  ]
+}

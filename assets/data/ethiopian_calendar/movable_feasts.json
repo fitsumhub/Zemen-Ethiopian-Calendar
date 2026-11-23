@@ -1,0 +1,26 @@
+{
+  "version": "1.0.0",
+  "schema": "movable_feast_rule_v1",
+  "source_ids": ["ethiocal_engine", "yinebebt_ethiocal", "kenat", "eotc_conformance", "meeus_julian_easter"],
+  "verification": "verified",
+  "date_kind": "calculated_bahire_hasab",
+  "notes": "Do not hardcode yearly dates. Compute from BahireHasab.calculate(year) offline.",
+  "anchor": {
+    "name": "Nenewe (Fast of Nineveh start)",
+    "description": "Computed from Amete Alem, Wenber, Abekte, Metqi, Mebaja Hamer"
+  },
+  "offsets_from_nenewe_days": [
+    {"id": "nenewe", "offset": 0, "title_en": "Fast of Nineveh", "is_fast": true},
+    {"id": "abiy_tsom", "offset": 14, "title_en": "Great Lent (Abiy Tsom) begins", "is_fast": true},
+    {"id": "debre_zeit", "offset": 41, "title_en": "Debre Zeit (Mid-Lent)", "is_fast": false},
+    {"id": "hosanna", "offset": 62, "title_en": "Hosanna (Palm Sunday)", "is_fast": false},
+    {"id": "siklet", "offset": 67, "title_en": "Siklet (Good Friday)", "is_fast": true},
+    {"id": "fasika", "offset": 69, "title_en": "Fasika (Easter)", "is_fast": false},
+    {"id": "rikbe_kahnat", "offset": 93, "title_en": "Rikbe Kahnat", "is_fast": false},
+    {"id": "erget", "offset": 108, "title_en": "Erget (Ascension)", "is_fast": false},
+    {"id": "peraklitos", "offset": 118, "title_en": "Paraclete (Pentecost)", "is_fast": false},
+    {"id": "tsome_hawaryat", "offset": 119, "title_en": "Apostles' Fast begins", "is_fast": true},
+    {"id": "tsome_dihnet", "offset": 121, "title_en": "Tsome Dihnet", "is_fast": true}
+  ],
+  "implementation": "lib/core/calendar/bahire_hasab.dart"
+}

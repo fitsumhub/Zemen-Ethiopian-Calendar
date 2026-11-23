@@ -1,0 +1,2869 @@
+{
+  "version": "1.0.0",
+  "source": "natinael96/EOTCDevAPI spec/conformance.json + EthioCal verification",
+  "license_note": "Derived vectors; EOTCDevAPI MIT. Values verified against EthioCal JDN engine.",
+  "ethiopian_epoch_jdn": 1724221,
+  "vectors": [
+    {
+      "jdn": 2341973,
+      "gregorian": [
+        1700,
+        1,
+        1
+      ],
+      "ethiopic": [
+        1692,
+        4,
+        25
+      ],
+      "weekday": 5
+    },
+    {
+      "jdn": 2342898,
+      "gregorian": [
+        1702,
+        7,
+        15
+      ],
+      "ethiopic": [
+        1694,
+        11,
+        10
+      ],
+      "weekday": 6
+    },
+    {
+      "jdn": 2343823,
+      "gregorian": [
+        1705,
+        1,
+        25
+      ],
+      "ethiopic": [
+        1697,
+        5,
+        19
+      ],
+      "weekday": 0
+    },
+    {
+      "jdn": 2344748,
+      "gregorian": [
+        1707,
+        8,
+        8
+      ],
+      "ethiopic": [
+        1699,
+        12,
+        4
+      ],
+      "weekday": 1
+    },
+    {
+      "jdn": 2345673,
+      "gregorian": [
+        1710,
+        2,
+        18
+      ],
+      "ethiopic": [
+        1702,
+        6,
+        13
+      ],
+      "weekday": 2
+    },
+    {
+      "jdn": 2346598,
+      "gregorian": [
+        1712,
+        8,
+        31
+      ],
+      "ethiopic": [
+        1704,
+        12,
+        27
+      ],
+      "weekday": 3
+    },
+    {
+      "jdn": 2347523,
+      "gregorian": [
+        1715,
+        3,
+        14
+      ],
+      "ethiopic": [
+        1707,
+        7,
+        7
+      ],
+      "weekday": 4
+    },
+    {
+      "jdn": 2348448,
+      "gregorian": [
+        1717,
+        9,
+        24
+      ],
+      "ethiopic": [
+        1710,
+        1,
+        16
+      ],
+      "weekday": 5
+    },
+    {
+      "jdn": 2349373,
+      "gregorian": [
+        1720,
+        4,
+        6
+      ],
+      "ethiopic": [
+        1712,
+        7,
+        30
+      ],
+      "weekday": 6
+    },
+    {
+      "jdn": 2350298,
+      "gregorian": [
+        1722,
+        10,
+        18
+      ],
+      "ethiopic": [
+        1715,
+        2,
+        10
+      ],
+      "weekday": 0
+    },
+    {
+      "jdn": 2351223,
+      "gregorian": [
+        1725,
+        4,
+        30
+      ],
+      "ethiopic": [
+        1717,
+        8,
+        24
+      ],
+      "weekday": 1
+    },
+    {
+      "jdn": 2352148,
+      "gregorian": [
+        1727,
+        11,
+        11
+      ],
+      "ethiopic": [
+        1720,
+        3,
+        3
+      ],
+      "weekday": 2
+    },
+    {
+      "jdn": 2353073,
+      "gregorian": [
+        1730,
+        5,
+        24
+      ],
+      "ethiopic": [
+        1722,
+        9,
+        18
+      ],
+      "weekday": 3
+    },
+    {
+      "jdn": 2353998,
+      "gregorian": [
+        1732,
+        12,
+        4
+      ],
+      "ethiopic": [
+        1725,
+        3,
+        27
+      ],
+      "weekday": 4
+    },
+    {
+      "jdn": 2354923,
+      "gregorian": [
+        1735,
+        6,
+        17
+      ],
+      "ethiopic": [
+        1727,
+        10,
+        12
+      ],
+      "weekday": 5
+    },
+    {
+      "jdn": 2355848,
+      "gregorian": [
+        1737,
+        12,
+        28
+      ],
+      "ethiopic": [
+        1730,
+        4,
+        21
+      ],
+      "weekday": 6
+    },
+    {
+      "jdn": 2356773,
+      "gregorian": [
+        1740,
+        7,
+        10
+      ],
+      "ethiopic": [
+        1732,
+        11,
+        5
+      ],
+      "weekday": 0
+    },
+    {
+      "jdn": 2357698,
+      "gregorian": [
+        1743,
+        1,
+        21
+      ],
+      "ethiopic": [
+        1735,
+        5,
+        15
+      ],
+      "weekday": 1
+    },
+    {
+      "jdn": 2358623,
+      "gregorian": [
+        1745,
+        8,
+        3
+      ],
+      "ethiopic": [
+        1737,
+        11,
+        29
+      ],
+      "weekday": 2
+    },
+    {
+      "jdn": 2359548,
+      "gregorian": [
+        1748,
+        2,
+        14
+      ],
+      "ethiopic": [
+        1740,
+        6,
+        8
+      ],
+      "weekday": 3
+    },
+    {
+      "jdn": 2360473,
+      "gregorian": [
+        1750,
+        8,
+        27
+      ],
+      "ethiopic": [
+        1742,
+        12,
+        23
+      ],
+      "weekday": 4
+    },
+    {
+      "jdn": 2361398,
+      "gregorian": [
+        1753,
+        3,
+        9
+      ],
+      "ethiopic": [
+        1745,
+        7,
+        2
+      ],
+      "weekday": 5
+    },
+    {
+      "jdn": 2362323,
+      "gregorian": [
+        1755,
+        9,
+        20
+      ],
+      "ethiopic": [
+        1748,
+        1,
+        11
+      ],
+      "weekday": 6
+    },
+    {
+      "jdn": 2363248,
+      "gregorian": [
+        1758,
+        4,
+        2
+      ],
+      "ethiopic": [
+        1750,
+        7,
+        26
+      ],
+      "weekday": 0
+    },
+    {
+      "jdn": 2364173,
+      "gregorian": [
+        1760,
+        10,
+        13
+      ],
+      "ethiopic": [
+        1753,
+        2,
+        5
+      ],
+      "weekday": 1
+    },
+    {
+      "jdn": 2365098,
+      "gregorian": [
+        1763,
+        4,
+        26
+      ],
+      "ethiopic": [
+        1755,
+        8,
+        20
+      ],
+      "weekday": 2
+    },
+    {
+      "jdn": 2366023,
+      "gregorian": [
+        1765,
+        11,
+        6
+      ],
+      "ethiopic": [
+        1758,
+        2,
+        29
+      ],
+      "weekday": 3
+    },
+    {
+      "jdn": 2366948,
+      "gregorian": [
+        1768,
+        5,
+        19
+      ],
+      "ethiopic": [
+        1760,
+        9,
+        13
+      ],
+      "weekday": 4
+    },
+    {
+      "jdn": 2367873,
+      "gregorian": [
+        1770,
+        11,
+        30
+      ],
+      "ethiopic": [
+        1763,
+        3,
+        23
+      ],
+      "weekday": 5
+    },
+    {
+      "jdn": 2368798,
+      "gregorian": [
+        1773,
+        6,
+        12
+      ],
+      "ethiopic": [
+        1765,
+        10,
+        7
+      ],
+      "weekday": 6
+    },
+    {
+      "jdn": 2369723,
+      "gregorian": [
+        1775,
+        12,
+        24
+      ],
+      "ethiopic": [
+        1768,
+        4,
+        16
+      ],
+      "weekday": 0
+    },
+    {
+      "jdn": 2370648,
+      "gregorian": [
+        1778,
+        7,
+        6
+      ],
+      "ethiopic": [
+        1770,
+        11,
+        1
+      ],
+      "weekday": 1
+    },
+    {
+      "jdn": 2371573,
+      "gregorian": [
+        1781,
+        1,
+        16
+      ],
+      "ethiopic": [
+        1773,
+        5,
+        10
+      ],
+      "weekday": 2
+    },
+    {
+      "jdn": 2372498,
+      "gregorian": [
+        1783,
+        7,
+        30
+      ],
+      "ethiopic": [
+        1775,
+        11,
+        25
+      ],
+      "weekday": 3
+    },
+    {
+      "jdn": 2373423,
+      "gregorian": [
+        1786,
+        2,
+        9
+      ],
+      "ethiopic": [
+        1778,
+        6,
+        4
+      ],
+      "weekday": 4
+    },
+    {
+      "jdn": 2374348,
+      "gregorian": [
+        1788,
+        8,
+        22
+      ],
+      "ethiopic": [
+        1780,
+        12,
+        18
+      ],
+      "weekday": 5
+    },
+    {
+      "jdn": 2375273,
+      "gregorian": [
+        1791,
+        3,
+        5
+      ],
+      "ethiopic": [
+        1783,
+        6,
+        28
+      ],
+      "weekday": 6
+    },
+    {
+      "jdn": 2376198,
+      "gregorian": [
+        1793,
+        9,
+        15
+      ],
+      "ethiopic": [
+        1786,
+        1,
+        7
+      ],
+      "weekday": 0
+    },
+    {
+      "jdn": 2377123,
+      "gregorian": [
+        1796,
+        3,
+        28
+      ],
+      "ethiopic": [
+        1788,
+        7,
+        21
+      ],
+      "weekday": 1
+    },
+    {
+      "jdn": 2378048,
+      "gregorian": [
+        1798,
+        10,
+        9
+      ],
+      "ethiopic": [
+        1791,
+        2,
+        1
+      ],
+      "weekday": 2
+    },
+    {
+      "jdn": 2378973,
+      "gregorian": [
+        1801,
+        4,
+        22
+      ],
+      "ethiopic": [
+        1793,
+        8,
+        15
+      ],
+      "weekday": 3
+    },
+    {
+      "jdn": 2379898,
+      "gregorian": [
+        1803,
+        11,
+        3
+      ],
+      "ethiopic": [
+        1796,
+        2,
+        24
+      ],
+      "weekday": 4
+    },
+    {
+      "jdn": 2380823,
+      "gregorian": [
+        1806,
+        5,
+        16
+      ],
+      "ethiopic": [
+        1798,
+        9,
+        9
+      ],
+      "weekday": 5
+    },
+    {
+      "jdn": 2381748,
+      "gregorian": [
+        1808,
+        11,
+        26
+      ],
+      "ethiopic": [
+        1801,
+        3,
+        18
+      ],
+      "weekday": 6
+    },
+    {
+      "jdn": 2382673,
+      "gregorian": [
+        1811,
+        6,
+        9
+      ],
+      "ethiopic": [
+        1803,
+        10,
+        3
+      ],
+      "weekday": 0
+    },
+    {
+      "jdn": 2383598,
+      "gregorian": [
+        1813,
+        12,
+        20
+      ],
+      "ethiopic": [
+        1806,
+        4,
+        12
+      ],
+      "weekday": 1
+    },
+    {
+      "jdn": 2384523,
+      "gregorian": [
+        1816,
+        7,
+        2
+      ],
+      "ethiopic": [
+        1808,
+        10,
+        26
+      ],
+      "weekday": 2
+    },
+    {
+      "jdn": 2385448,
+      "gregorian": [
+        1819,
+        1,
+        13
+      ],
+      "ethiopic": [
+        1811,
+        5,
+        6
+      ],
+      "weekday": 3
+    },
+    {
+      "jdn": 2386373,
+      "gregorian": [
+        1821,
+        7,
+        26
+      ],
+      "ethiopic": [
+        1813,
+        11,
+        20
+      ],
+      "weekday": 4
+    },
+    {
+      "jdn": 2387298,
+      "gregorian": [
+        1824,
+        2,
+        6
+      ],
+      "ethiopic": [
+        1816,
+        5,
+        29
+      ],
+      "weekday": 5
+    },
+    {
+      "jdn": 2388223,
+      "gregorian": [
+        1826,
+        8,
+        19
+      ],
+      "ethiopic": [
+        1818,
+        12,
+        14
+      ],
+      "weekday": 6
+    },
+    {
+      "jdn": 2389148,
+      "gregorian": [
+        1829,
+        3,
+        1
+      ],
+      "ethiopic": [
+        1821,
+        6,
+        23
+      ],
+      "weekday": 0
+    },
+    {
+      "jdn": 2390073,
+      "gregorian": [
+        1831,
+        9,
+        12
+      ],
+      "ethiopic": [
+        1824,
+        1,
+        2
+      ],
+      "weekday": 1
+    },
+    {
+      "jdn": 2390998,
+      "gregorian": [
+        1834,
+        3,
+        25
+      ],
+      "ethiopic": [
+        1826,
+        7,
+        17
+      ],
+      "weekday": 2
+    },
+    {
+      "jdn": 2391923,
+      "gregorian": [
+        1836,
+        10,
+        5
+      ],
+      "ethiopic": [
+        1829,
+        1,
+        26
+      ],
+      "weekday": 3
+    },
+    {
+      "jdn": 2392848,
+      "gregorian": [
+        1839,
+        4,
+        18
+      ],
+      "ethiopic": [
+        1831,
+        8,
+        11
+      ],
+      "weekday": 4
+    },
+    {
+      "jdn": 2393773,
+      "gregorian": [
+        1841,
+        10,
+        29
+      ],
+      "ethiopic": [
+        1834,
+        2,
+        20
+      ],
+      "weekday": 5
+    },
+    {
+      "jdn": 2394698,
+      "gregorian": [
+        1844,
+        5,
+        11
+      ],
+      "ethiopic": [
+        1836,
+        9,
+        4
+      ],
+      "weekday": 6
+    },
+    {
+      "jdn": 2395623,
+      "gregorian": [
+        1846,
+        11,
+        22
+      ],
+      "ethiopic": [
+        1839,
+        3,
+        14
+      ],
+      "weekday": 0
+    },
+    {
+      "jdn": 2396548,
+      "gregorian": [
+        1849,
+        6,
+        4
+      ],
+      "ethiopic": [
+        1841,
+        9,
+        28
+      ],
+      "weekday": 1
+    },
+    {
+      "jdn": 2397473,
+      "gregorian": [
+        1851,
+        12,
+        16
+      ],
+      "ethiopic": [
+        1844,
+        4,
+        7
+      ],
+      "weekday": 2
+    },
+    {
+      "jdn": 2398398,
+      "gregorian": [
+        1854,
+        6,
+        28
+      ],
+      "ethiopic": [
+        1846,
+        10,
+        22
+      ],
+      "weekday": 3
+    },
+    {
+      "jdn": 2399323,
+      "gregorian": [
+        1857,
+        1,
+        8
+      ],
+      "ethiopic": [
+        1849,
+        5,
+        1
+      ],
+      "weekday": 4
+    },
+    {
+      "jdn": 2400248,
+      "gregorian": [
+        1859,
+        7,
+        22
+      ],
+      "ethiopic": [
+        1851,
+        11,
+        16
+      ],
+      "weekday": 5
+    },
+    {
+      "jdn": 2401173,
+      "gregorian": [
+        1862,
+        2,
+        1
+      ],
+      "ethiopic": [
+        1854,
+        5,
+        25
+      ],
+      "weekday": 6
+    },
+    {
+      "jdn": 2402098,
+      "gregorian": [
+        1864,
+        8,
+        14
+      ],
+      "ethiopic": [
+        1856,
+        12,
+        9
+      ],
+      "weekday": 0
+    },
+    {
+      "jdn": 2403023,
+      "gregorian": [
+        1867,
+        2,
+        25
+      ],
+      "ethiopic": [
+        1859,
+        6,
+        19
+      ],
+      "weekday": 1
+    },
+    {
+      "jdn": 2403948,
+      "gregorian": [
+        1869,
+        9,
+        7
+      ],
+      "ethiopic": [
+        1861,
+        13,
+        3
+      ],
+      "weekday": 2
+    },
+    {
+      "jdn": 2404873,
+      "gregorian": [
+        1872,
+        3,
+        20
+      ],
+      "ethiopic": [
+        1864,
+        7,
+        12
+      ],
+      "weekday": 3
+    },
+    {
+      "jdn": 2405798,
+      "gregorian": [
+        1874,
+        10,
+        1
+      ],
+      "ethiopic": [
+        1867,
+        1,
+        22
+      ],
+      "weekday": 4
+    },
+    {
+      "jdn": 2406723,
+      "gregorian": [
+        1877,
+        4,
+        13
+      ],
+      "ethiopic": [
+        1869,
+        8,
+        6
+      ],
+      "weekday": 5
+    },
+    {
+      "jdn": 2407648,
+      "gregorian": [
+        1879,
+        10,
+        25
+      ],
+      "ethiopic": [
+        1872,
+        2,
+        15
+      ],
+      "weekday": 6
+    },
+    {
+      "jdn": 2408573,
+      "gregorian": [
+        1882,
+        5,
+        7
+      ],
+      "ethiopic": [
+        1874,
+        8,
+        30
+      ],
+      "weekday": 0
+    },
+    {
+      "jdn": 2409498,
+      "gregorian": [
+        1884,
+        11,
+        17
+      ],
+      "ethiopic": [
+        1877,
+        3,
+        9
+      ],
+      "weekday": 1
+    },
+    {
+      "jdn": 2410423,
+      "gregorian": [
+        1887,
+        5,
+        31
+      ],
+      "ethiopic": [
+        1879,
+        9,
+        24
+      ],
+      "weekday": 2
+    },
+    {
+      "jdn": 2411348,
+      "gregorian": [
+        1889,
+        12,
+        11
+      ],
+      "ethiopic": [
+        1882,
+        4,
+        3
+      ],
+      "weekday": 3
+    },
+    {
+      "jdn": 2412273,
+      "gregorian": [
+        1892,
+        6,
+        23
+      ],
+      "ethiopic": [
+        1884,
+        10,
+        17
+      ],
+      "weekday": 4
+    },
+    {
+      "jdn": 2413198,
+      "gregorian": [
+        1895,
+        1,
+        4
+      ],
+      "ethiopic": [
+        1887,
+        4,
+        27
+      ],
+      "weekday": 5
+    },
+    {
+      "jdn": 2414123,
+      "gregorian": [
+        1897,
+        7,
+        17
+      ],
+      "ethiopic": [
+        1889,
+        11,
+        11
+      ],
+      "weekday": 6
+    },
+    {
+      "jdn": 2415048,
+      "gregorian": [
+        1900,
+        1,
+        28
+      ],
+      "ethiopic": [
+        1892,
+        5,
+        20
+      ],
+      "weekday": 0
+    },
+    {
+      "jdn": 2415973,
+      "gregorian": [
+        1902,
+        8,
+        11
+      ],
+      "ethiopic": [
+        1894,
+        12,
+        5
+      ],
+      "weekday": 1
+    },
+    {
+      "jdn": 2416898,
+      "gregorian": [
+        1905,
+        2,
+        21
+      ],
+      "ethiopic": [
+        1897,
+        6,
+        14
+      ],
+      "weekday": 2
+    },
+    {
+      "jdn": 2417823,
+      "gregorian": [
+        1907,
+        9,
+        4
+      ],
+      "ethiopic": [
+        1899,
+        12,
+        29
+      ],
+      "weekday": 3
+    },
+    {
+      "jdn": 2418748,
+      "gregorian": [
+        1910,
+        3,
+        17
+      ],
+      "ethiopic": [
+        1902,
+        7,
+        8
+      ],
+      "weekday": 4
+    },
+    {
+      "jdn": 2419673,
+      "gregorian": [
+        1912,
+        9,
+        27
+      ],
+      "ethiopic": [
+        1905,
+        1,
+        17
+      ],
+      "weekday": 5
+    },
+    {
+      "jdn": 2420598,
+      "gregorian": [
+        1915,
+        4,
+        10
+      ],
+      "ethiopic": [
+        1907,
+        8,
+        2
+      ],
+      "weekday": 6
+    },
+    {
+      "jdn": 2421523,
+      "gregorian": [
+        1917,
+        10,
+        21
+      ],
+      "ethiopic": [
+        1910,
+        2,
+        11
+      ],
+      "weekday": 0
+    },
+    {
+      "jdn": 2422448,
+      "gregorian": [
+        1920,
+        5,
+        3
+      ],
+      "ethiopic": [
+        1912,
+        8,
+        25
+      ],
+      "weekday": 1
+    },
+    {
+      "jdn": 2423373,
+      "gregorian": [
+        1922,
+        11,
+        14
+      ],
+      "ethiopic": [
+        1915,
+        3,
+        5
+      ],
+      "weekday": 2
+    },
+    {
+      "jdn": 2424298,
+      "gregorian": [
+        1925,
+        5,
+        27
+      ],
+      "ethiopic": [
+        1917,
+        9,
+        19
+      ],
+      "weekday": 3
+    },
+    {
+      "jdn": 2425223,
+      "gregorian": [
+        1927,
+        12,
+        8
+      ],
+      "ethiopic": [
+        1920,
+        3,
+        28
+      ],
+      "weekday": 4
+    },
+    {
+      "jdn": 2426148,
+      "gregorian": [
+        1930,
+        6,
+        20
+      ],
+      "ethiopic": [
+        1922,
+        10,
+        13
+      ],
+      "weekday": 5
+    },
+    {
+      "jdn": 2427073,
+      "gregorian": [
+        1932,
+        12,
+        31
+      ],
+      "ethiopic": [
+        1925,
+        4,
+        22
+      ],
+      "weekday": 6
+    },
+    {
+      "jdn": 2427998,
+      "gregorian": [
+        1935,
+        7,
+        14
+      ],
+      "ethiopic": [
+        1927,
+        11,
+        7
+      ],
+      "weekday": 0
+    },
+    {
+      "jdn": 2428923,
+      "gregorian": [
+        1938,
+        1,
+        24
+      ],
+      "ethiopic": [
+        1930,
+        5,
+        16
+      ],
+      "weekday": 1
+    },
+    {
+      "jdn": 2429848,
+      "gregorian": [
+        1940,
+        8,
+        6
+      ],
+      "ethiopic": [
+        1932,
+        11,
+        30
+      ],
+      "weekday": 2
+    },
+    {
+      "jdn": 2430773,
+      "gregorian": [
+        1943,
+        2,
+        17
+      ],
+      "ethiopic": [
+        1935,
+        6,
+        10
+      ],
+      "weekday": 3
+    },
+    {
+      "jdn": 2431698,
+      "gregorian": [
+        1945,
+        8,
+        30
+      ],
+      "ethiopic": [
+        1937,
+        12,
+        24
+      ],
+      "weekday": 4
+    },
+    {
+      "jdn": 2432623,
+      "gregorian": [
+        1948,
+        3,
+        12
+      ],
+      "ethiopic": [
+        1940,
+        7,
+        3
+      ],
+      "weekday": 5
+    },
+    {
+      "jdn": 2433548,
+      "gregorian": [
+        1950,
+        9,
+        23
+      ],
+      "ethiopic": [
+        1943,
+        1,
+        13
+      ],
+      "weekday": 6
+    },
+    {
+      "jdn": 2434473,
+      "gregorian": [
+        1953,
+        4,
+        5
+      ],
+      "ethiopic": [
+        1945,
+        7,
+        27
+      ],
+      "weekday": 0
+    },
+    {
+      "jdn": 2435398,
+      "gregorian": [
+        1955,
+        10,
+        17
+      ],
+      "ethiopic": [
+        1948,
+        2,
+        6
+      ],
+      "weekday": 1
+    },
+    {
+      "jdn": 2436323,
+      "gregorian": [
+        1958,
+        4,
+        29
+      ],
+      "ethiopic": [
+        1950,
+        8,
+        21
+      ],
+      "weekday": 2
+    },
+    {
+      "jdn": 2437248,
+      "gregorian": [
+        1960,
+        11,
+        9
+      ],
+      "ethiopic": [
+        1953,
+        2,
+        30
+      ],
+      "weekday": 3
+    },
+    {
+      "jdn": 2438173,
+      "gregorian": [
+        1963,
+        5,
+        23
+      ],
+      "ethiopic": [
+        1955,
+        9,
+        15
+      ],
+      "weekday": 4
+    },
+    {
+      "jdn": 2439098,
+      "gregorian": [
+        1965,
+        12,
+        3
+      ],
+      "ethiopic": [
+        1958,
+        3,
+        24
+      ],
+      "weekday": 5
+    },
+    {
+      "jdn": 2440023,
+      "gregorian": [
+        1968,
+        6,
+        15
+      ],
+      "ethiopic": [
+        1960,
+        10,
+        8
+      ],
+      "weekday": 6
+    },
+    {
+      "jdn": 2440948,
+      "gregorian": [
+        1970,
+        12,
+        27
+      ],
+      "ethiopic": [
+        1963,
+        4,
+        18
+      ],
+      "weekday": 0
+    },
+    {
+      "jdn": 2441873,
+      "gregorian": [
+        1973,
+        7,
+        9
+      ],
+      "ethiopic": [
+        1965,
+        11,
+        2
+      ],
+      "weekday": 1
+    },
+    {
+      "jdn": 2442798,
+      "gregorian": [
+        1976,
+        1,
+        20
+      ],
+      "ethiopic": [
+        1968,
+        5,
+        11
+      ],
+      "weekday": 2
+    },
+    {
+      "jdn": 2443723,
+      "gregorian": [
+        1978,
+        8,
+        2
+      ],
+      "ethiopic": [
+        1970,
+        11,
+        26
+      ],
+      "weekday": 3
+    },
+    {
+      "jdn": 2444648,
+      "gregorian": [
+        1981,
+        2,
+        12
+      ],
+      "ethiopic": [
+        1973,
+        6,
+        5
+      ],
+      "weekday": 4
+    },
+    {
+      "jdn": 2445573,
+      "gregorian": [
+        1983,
+        8,
+        26
+      ],
+      "ethiopic": [
+        1975,
+        12,
+        20
+      ],
+      "weekday": 5
+    },
+    {
+      "jdn": 2446498,
+      "gregorian": [
+        1986,
+        3,
+        8
+      ],
+      "ethiopic": [
+        1978,
+        6,
+        29
+      ],
+      "weekday": 6
+    },
+    {
+      "jdn": 2447423,
+      "gregorian": [
+        1988,
+        9,
+        18
+      ],
+      "ethiopic": [
+        1981,
+        1,
+        8
+      ],
+      "weekday": 0
+    },
+    {
+      "jdn": 2448348,
+      "gregorian": [
+        1991,
+        4,
+        1
+      ],
+      "ethiopic": [
+        1983,
+        7,
+        23
+      ],
+      "weekday": 1
+    },
+    {
+      "jdn": 2449273,
+      "gregorian": [
+        1993,
+        10,
+        12
+      ],
+      "ethiopic": [
+        1986,
+        2,
+        2
+      ],
+      "weekday": 2
+    },
+    {
+      "jdn": 2450198,
+      "gregorian": [
+        1996,
+        4,
+        24
+      ],
+      "ethiopic": [
+        1988,
+        8,
+        16
+      ],
+      "weekday": 3
+    },
+    {
+      "jdn": 2451123,
+      "gregorian": [
+        1998,
+        11,
+        5
+      ],
+      "ethiopic": [
+        1991,
+        2,
+        26
+      ],
+      "weekday": 4
+    },
+    {
+      "jdn": 2452048,
+      "gregorian": [
+        2001,
+        5,
+        18
+      ],
+      "ethiopic": [
+        1993,
+        9,
+        10
+      ],
+      "weekday": 5
+    },
+    {
+      "jdn": 2452973,
+      "gregorian": [
+        2003,
+        11,
+        29
+      ],
+      "ethiopic": [
+        1996,
+        3,
+        19
+      ],
+      "weekday": 6
+    },
+    {
+      "jdn": 2453898,
+      "gregorian": [
+        2006,
+        6,
+        11
+      ],
+      "ethiopic": [
+        1998,
+        10,
+        4
+      ],
+      "weekday": 0
+    },
+    {
+      "jdn": 2454823,
+      "gregorian": [
+        2008,
+        12,
+        22
+      ],
+      "ethiopic": [
+        2001,
+        4,
+        13
+      ],
+      "weekday": 1
+    },
+    {
+      "jdn": 2455748,
+      "gregorian": [
+        2011,
+        7,
+        5
+      ],
+      "ethiopic": [
+        2003,
+        10,
+        28
+      ],
+      "weekday": 2
+    },
+    {
+      "jdn": 2456673,
+      "gregorian": [
+        2014,
+        1,
+        15
+      ],
+      "ethiopic": [
+        2006,
+        5,
+        7
+      ],
+      "weekday": 3
+    },
+    {
+      "jdn": 2457598,
+      "gregorian": [
+        2016,
+        7,
+        28
+      ],
+      "ethiopic": [
+        2008,
+        11,
+        21
+      ],
+      "weekday": 4
+    },
+    {
+      "jdn": 2458523,
+      "gregorian": [
+        2019,
+        2,
+        8
+      ],
+      "ethiopic": [
+        2011,
+        6,
+        1
+      ],
+      "weekday": 5
+    },
+    {
+      "jdn": 2459448,
+      "gregorian": [
+        2021,
+        8,
+        21
+      ],
+      "ethiopic": [
+        2013,
+        12,
+        15
+      ],
+      "weekday": 6
+    },
+    {
+      "jdn": 2460373,
+      "gregorian": [
+        2024,
+        3,
+        3
+      ],
+      "ethiopic": [
+        2016,
+        6,
+        24
+      ],
+      "weekday": 0
+    },
+    {
+      "jdn": 2461298,
+      "gregorian": [
+        2026,
+        9,
+        14
+      ],
+      "ethiopic": [
+        2019,
+        1,
+        4
+      ],
+      "weekday": 1
+    },
+    {
+      "jdn": 2462223,
+      "gregorian": [
+        2029,
+        3,
+        27
+      ],
+      "ethiopic": [
+        2021,
+        7,
+        18
+      ],
+      "weekday": 2
+    },
+    {
+      "jdn": 2463148,
+      "gregorian": [
+        2031,
+        10,
+        8
+      ],
+      "ethiopic": [
+        2024,
+        1,
+        27
+      ],
+      "weekday": 3
+    },
+    {
+      "jdn": 2464073,
+      "gregorian": [
+        2034,
+        4,
+        20
+      ],
+      "ethiopic": [
+        2026,
+        8,
+        12
+      ],
+      "weekday": 4
+    },
+    {
+      "jdn": 2464998,
+      "gregorian": [
+        2036,
+        10,
+        31
+      ],
+      "ethiopic": [
+        2029,
+        2,
+        21
+      ],
+      "weekday": 5
+    },
+    {
+      "jdn": 2465923,
+      "gregorian": [
+        2039,
+        5,
+        14
+      ],
+      "ethiopic": [
+        2031,
+        9,
+        6
+      ],
+      "weekday": 6
+    },
+    {
+      "jdn": 2466848,
+      "gregorian": [
+        2041,
+        11,
+        24
+      ],
+      "ethiopic": [
+        2034,
+        3,
+        15
+      ],
+      "weekday": 0
+    },
+    {
+      "jdn": 2467773,
+      "gregorian": [
+        2044,
+        6,
+        6
+      ],
+      "ethiopic": [
+        2036,
+        9,
+        29
+      ],
+      "weekday": 1
+    },
+    {
+      "jdn": 2468698,
+      "gregorian": [
+        2046,
+        12,
+        18
+      ],
+      "ethiopic": [
+        2039,
+        4,
+        9
+      ],
+      "weekday": 2
+    },
+    {
+      "jdn": 2469623,
+      "gregorian": [
+        2049,
+        6,
+        30
+      ],
+      "ethiopic": [
+        2041,
+        10,
+        23
+      ],
+      "weekday": 3
+    },
+    {
+      "jdn": 2470548,
+      "gregorian": [
+        2052,
+        1,
+        11
+      ],
+      "ethiopic": [
+        2044,
+        5,
+        2
+      ],
+      "weekday": 4
+    },
+    {
+      "jdn": 2471473,
+      "gregorian": [
+        2054,
+        7,
+        24
+      ],
+      "ethiopic": [
+        2046,
+        11,
+        17
+      ],
+      "weekday": 5
+    },
+    {
+      "jdn": 2472398,
+      "gregorian": [
+        2057,
+        2,
+        3
+      ],
+      "ethiopic": [
+        2049,
+        5,
+        26
+      ],
+      "weekday": 6
+    },
+    {
+      "jdn": 2473323,
+      "gregorian": [
+        2059,
+        8,
+        17
+      ],
+      "ethiopic": [
+        2051,
+        12,
+        11
+      ],
+      "weekday": 0
+    },
+    {
+      "jdn": 2474248,
+      "gregorian": [
+        2062,
+        2,
+        27
+      ],
+      "ethiopic": [
+        2054,
+        6,
+        20
+      ],
+      "weekday": 1
+    },
+    {
+      "jdn": 2475173,
+      "gregorian": [
+        2064,
+        9,
+        9
+      ],
+      "ethiopic": [
+        2056,
+        13,
+        4
+      ],
+      "weekday": 2
+    },
+    {
+      "jdn": 2476098,
+      "gregorian": [
+        2067,
+        3,
+        23
+      ],
+      "ethiopic": [
+        2059,
+        7,
+        14
+      ],
+      "weekday": 3
+    },
+    {
+      "jdn": 2477023,
+      "gregorian": [
+        2069,
+        10,
+        3
+      ],
+      "ethiopic": [
+        2062,
+        1,
+        23
+      ],
+      "weekday": 4
+    },
+    {
+      "jdn": 2477948,
+      "gregorian": [
+        2072,
+        4,
+        15
+      ],
+      "ethiopic": [
+        2064,
+        8,
+        7
+      ],
+      "weekday": 5
+    },
+    {
+      "jdn": 2478873,
+      "gregorian": [
+        2074,
+        10,
+        27
+      ],
+      "ethiopic": [
+        2067,
+        2,
+        17
+      ],
+      "weekday": 6
+    },
+    {
+      "jdn": 2479798,
+      "gregorian": [
+        2077,
+        5,
+        9
+      ],
+      "ethiopic": [
+        2069,
+        9,
+        1
+      ],
+      "weekday": 0
+    },
+    {
+      "jdn": 2480723,
+      "gregorian": [
+        2079,
+        11,
+        20
+      ],
+      "ethiopic": [
+        2072,
+        3,
+        10
+      ],
+      "weekday": 1
+    },
+    {
+      "jdn": 2481648,
+      "gregorian": [
+        2082,
+        6,
+        2
+      ],
+      "ethiopic": [
+        2074,
+        9,
+        25
+      ],
+      "weekday": 2
+    },
+    {
+      "jdn": 2482573,
+      "gregorian": [
+        2084,
+        12,
+        13
+      ],
+      "ethiopic": [
+        2077,
+        4,
+        4
+      ],
+      "weekday": 3
+    },
+    {
+      "jdn": 2483498,
+      "gregorian": [
+        2087,
+        6,
+        26
+      ],
+      "ethiopic": [
+        2079,
+        10,
+        19
+      ],
+      "weekday": 4
+    },
+    {
+      "jdn": 2484423,
+      "gregorian": [
+        2090,
+        1,
+        6
+      ],
+      "ethiopic": [
+        2082,
+        4,
+        28
+      ],
+      "weekday": 5
+    },
+    {
+      "jdn": 2485348,
+      "gregorian": [
+        2092,
+        7,
+        19
+      ],
+      "ethiopic": [
+        2084,
+        11,
+        12
+      ],
+      "weekday": 6
+    },
+    {
+      "jdn": 2486273,
+      "gregorian": [
+        2095,
+        1,
+        30
+      ],
+      "ethiopic": [
+        2087,
+        5,
+        22
+      ],
+      "weekday": 0
+    },
+    {
+      "jdn": 2487198,
+      "gregorian": [
+        2097,
+        8,
+        12
+      ],
+      "ethiopic": [
+        2089,
+        12,
+        6
+      ],
+      "weekday": 1
+    },
+    {
+      "jdn": 2488123,
+      "gregorian": [
+        2100,
+        2,
+        23
+      ],
+      "ethiopic": [
+        2092,
+        6,
+        15
+      ],
+      "weekday": 2
+    },
+    {
+      "jdn": 2489048,
+      "gregorian": [
+        2102,
+        9,
+        6
+      ],
+      "ethiopic": [
+        2094,
+        12,
+        30
+      ],
+      "weekday": 3
+    },
+    {
+      "jdn": 2489973,
+      "gregorian": [
+        2105,
+        3,
+        19
+      ],
+      "ethiopic": [
+        2097,
+        7,
+        9
+      ],
+      "weekday": 4
+    },
+    {
+      "jdn": 2490898,
+      "gregorian": [
+        2107,
+        9,
+        30
+      ],
+      "ethiopic": [
+        2100,
+        1,
+        18
+      ],
+      "weekday": 5
+    },
+    {
+      "jdn": 2491823,
+      "gregorian": [
+        2110,
+        4,
+        12
+      ],
+      "ethiopic": [
+        2102,
+        8,
+        3
+      ],
+      "weekday": 6
+    },
+    {
+      "jdn": 2492748,
+      "gregorian": [
+        2112,
+        10,
+        23
+      ],
+      "ethiopic": [
+        2105,
+        2,
+        12
+      ],
+      "weekday": 0
+    },
+    {
+      "jdn": 2493673,
+      "gregorian": [
+        2115,
+        5,
+        6
+      ],
+      "ethiopic": [
+        2107,
+        8,
+        27
+      ],
+      "weekday": 1
+    },
+    {
+      "jdn": 2494598,
+      "gregorian": [
+        2117,
+        11,
+        16
+      ],
+      "ethiopic": [
+        2110,
+        3,
+        6
+      ],
+      "weekday": 2
+    },
+    {
+      "jdn": 2495523,
+      "gregorian": [
+        2120,
+        5,
+        29
+      ],
+      "ethiopic": [
+        2112,
+        9,
+        20
+      ],
+      "weekday": 3
+    },
+    {
+      "jdn": 2496448,
+      "gregorian": [
+        2122,
+        12,
+        10
+      ],
+      "ethiopic": [
+        2115,
+        3,
+        30
+      ],
+      "weekday": 4
+    },
+    {
+      "jdn": 2497373,
+      "gregorian": [
+        2125,
+        6,
+        22
+      ],
+      "ethiopic": [
+        2117,
+        10,
+        14
+      ],
+      "weekday": 5
+    },
+    {
+      "jdn": 2498298,
+      "gregorian": [
+        2128,
+        1,
+        3
+      ],
+      "ethiopic": [
+        2120,
+        4,
+        23
+      ],
+      "weekday": 6
+    },
+    {
+      "jdn": 2499223,
+      "gregorian": [
+        2130,
+        7,
+        16
+      ],
+      "ethiopic": [
+        2122,
+        11,
+        8
+      ],
+      "weekday": 0
+    },
+    {
+      "jdn": 2500148,
+      "gregorian": [
+        2133,
+        1,
+        26
+      ],
+      "ethiopic": [
+        2125,
+        5,
+        17
+      ],
+      "weekday": 1
+    },
+    {
+      "jdn": 2501073,
+      "gregorian": [
+        2135,
+        8,
+        9
+      ],
+      "ethiopic": [
+        2127,
+        12,
+        2
+      ],
+      "weekday": 2
+    },
+    {
+      "jdn": 2501998,
+      "gregorian": [
+        2138,
+        2,
+        19
+      ],
+      "ethiopic": [
+        2130,
+        6,
+        11
+      ],
+      "weekday": 3
+    },
+    {
+      "jdn": 2502923,
+      "gregorian": [
+        2140,
+        9,
+        1
+      ],
+      "ethiopic": [
+        2132,
+        12,
+        25
+      ],
+      "weekday": 4
+    },
+    {
+      "jdn": 2503848,
+      "gregorian": [
+        2143,
+        3,
+        15
+      ],
+      "ethiopic": [
+        2135,
+        7,
+        5
+      ],
+      "weekday": 5
+    },
+    {
+      "jdn": 2504773,
+      "gregorian": [
+        2145,
+        9,
+        25
+      ],
+      "ethiopic": [
+        2138,
+        1,
+        14
+      ],
+      "weekday": 6
+    },
+    {
+      "jdn": 2505698,
+      "gregorian": [
+        2148,
+        4,
+        7
+      ],
+      "ethiopic": [
+        2140,
+        7,
+        28
+      ],
+      "weekday": 0
+    },
+    {
+      "jdn": 2506623,
+      "gregorian": [
+        2150,
+        10,
+        19
+      ],
+      "ethiopic": [
+        2143,
+        2,
+        8
+      ],
+      "weekday": 1
+    },
+    {
+      "jdn": 2507548,
+      "gregorian": [
+        2153,
+        5,
+        1
+      ],
+      "ethiopic": [
+        2145,
+        8,
+        22
+      ],
+      "weekday": 2
+    },
+    {
+      "jdn": 2508473,
+      "gregorian": [
+        2155,
+        11,
+        12
+      ],
+      "ethiopic": [
+        2148,
+        3,
+        1
+      ],
+      "weekday": 3
+    },
+    {
+      "jdn": 2509398,
+      "gregorian": [
+        2158,
+        5,
+        25
+      ],
+      "ethiopic": [
+        2150,
+        9,
+        16
+      ],
+      "weekday": 4
+    },
+    {
+      "jdn": 2510323,
+      "gregorian": [
+        2160,
+        12,
+        5
+      ],
+      "ethiopic": [
+        2153,
+        3,
+        25
+      ],
+      "weekday": 5
+    },
+    {
+      "jdn": 2511248,
+      "gregorian": [
+        2163,
+        6,
+        18
+      ],
+      "ethiopic": [
+        2155,
+        10,
+        10
+      ],
+      "weekday": 6
+    },
+    {
+      "jdn": 2512173,
+      "gregorian": [
+        2165,
+        12,
+        29
+      ],
+      "ethiopic": [
+        2158,
+        4,
+        19
+      ],
+      "weekday": 0
+    },
+    {
+      "jdn": 2513098,
+      "gregorian": [
+        2168,
+        7,
+        11
+      ],
+      "ethiopic": [
+        2160,
+        11,
+        3
+      ],
+      "weekday": 1
+    },
+    {
+      "jdn": 2514023,
+      "gregorian": [
+        2171,
+        1,
+        22
+      ],
+      "ethiopic": [
+        2163,
+        5,
+        13
+      ],
+      "weekday": 2
+    },
+    {
+      "jdn": 2514948,
+      "gregorian": [
+        2173,
+        8,
+        4
+      ],
+      "ethiopic": [
+        2165,
+        11,
+        27
+      ],
+      "weekday": 3
+    },
+    {
+      "jdn": 2515873,
+      "gregorian": [
+        2176,
+        2,
+        15
+      ],
+      "ethiopic": [
+        2168,
+        6,
+        6
+      ],
+      "weekday": 4
+    },
+    {
+      "jdn": 2516798,
+      "gregorian": [
+        2178,
+        8,
+        28
+      ],
+      "ethiopic": [
+        2170,
+        12,
+        21
+      ],
+      "weekday": 5
+    },
+    {
+      "jdn": 2517723,
+      "gregorian": [
+        2181,
+        3,
+        10
+      ],
+      "ethiopic": [
+        2173,
+        6,
+        30
+      ],
+      "weekday": 6
+    },
+    {
+      "jdn": 2518648,
+      "gregorian": [
+        2183,
+        9,
+        21
+      ],
+      "ethiopic": [
+        2176,
+        1,
+        9
+      ],
+      "weekday": 0
+    },
+    {
+      "jdn": 2519573,
+      "gregorian": [
+        2186,
+        4,
+        3
+      ],
+      "ethiopic": [
+        2178,
+        7,
+        24
+      ],
+      "weekday": 1
+    },
+    {
+      "jdn": 2520498,
+      "gregorian": [
+        2188,
+        10,
+        14
+      ],
+      "ethiopic": [
+        2181,
+        2,
+        3
+      ],
+      "weekday": 2
+    },
+    {
+      "jdn": 2521423,
+      "gregorian": [
+        2191,
+        4,
+        27
+      ],
+      "ethiopic": [
+        2183,
+        8,
+        18
+      ],
+      "weekday": 3
+    },
+    {
+      "jdn": 2522348,
+      "gregorian": [
+        2193,
+        11,
+        7
+      ],
+      "ethiopic": [
+        2186,
+        2,
+        27
+      ],
+      "weekday": 4
+    },
+    {
+      "jdn": 2523273,
+      "gregorian": [
+        2196,
+        5,
+        20
+      ],
+      "ethiopic": [
+        2188,
+        9,
+        11
+      ],
+      "weekday": 5
+    },
+    {
+      "jdn": 2524198,
+      "gregorian": [
+        2198,
+        12,
+        1
+      ],
+      "ethiopic": [
+        2191,
+        3,
+        21
+      ],
+      "weekday": 6
+    },
+    {
+      "jdn": 2454416,
+      "gregorian": [
+        2007,
+        11,
+        11
+      ],
+      "ethiopic": [
+        2000,
+        3,
+        1
+      ],
+      "weekday": 0
+    },
+    {
+      "jdn": 2458338,
+      "gregorian": [
+        2018,
+        8,
+        7
+      ],
+      "ethiopic": [
+        2010,
+        12,
+        1
+      ],
+      "weekday": 2
+    },
+    {
+      "jdn": 2459374,
+      "gregorian": [
+        2021,
+        6,
+        8
+      ],
+      "ethiopic": [
+        2013,
+        10,
+        1
+      ],
+      "weekday": 2
+    },
+    {
+      "jdn": 2459559,
+      "gregorian": [
+        2021,
+        12,
+        10
+      ],
+      "ethiopic": [
+        2014,
+        4,
+        1
+      ],
+      "weekday": 5
+    },
+    {
+      "jdn": 2460410,
+      "gregorian": [
+        2024,
+        4,
+        9
+      ],
+      "ethiopic": [
+        2016,
+        8,
+        1
+      ],
+      "weekday": 2
+    },
+    {
+      "jdn": 2460595,
+      "gregorian": [
+        2024,
+        10,
+        11
+      ],
+      "ethiopic": [
+        2017,
+        2,
+        1
+      ],
+      "weekday": 5
+    }
+  ],
+  "verification": {
+    "matched": 4936,
+    "mismatched": 0,
+    "total": 4936
+  }
+}
